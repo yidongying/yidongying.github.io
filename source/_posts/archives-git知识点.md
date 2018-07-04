@@ -4,12 +4,12 @@ date: 2017-3-23
 tags:
 categories: 博客搭建
 ---
-1. Hexo简介
+**1. Hexo简介**
 Hexo 是一款基于 Node.js 的静态博客框架。Hexo 使用 Markdown 解析文章，用户在本地安装Hexo并进行写作，通过一条命令，Hexo即可利用靓丽的主题自动生成静态网页。
 参考：[Hexo-Github地址](https://github.com/hexojs/hexo)        [Hexo帮助文档](https://hexo.io/zh-cn/docs/)
 ![这里写图片描述](https://img-blog.csdn.net/20180704101848462?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
-2. 博客环境搭建
-2.1 安装Git
+**2. 博客环境搭建**
+**2.1 安装Git**
 Windows平台：以 Win7 64位机为例
 
 到[官网](https://git-scm.com/download)下载 Git，一路默认选项安装。本文使用的是Git-2.8.1-64-bit. 
@@ -23,10 +23,10 @@ Windows平台：以 Win7 64位机为例
 
 Linux平台
 
-2.3 安装Hexo
+**2.3 安装Hexo**
 Git 和 Node.js 都安装好后,首先创建一个用于存放博客文件的文件夹，如 blog，然后进入 blog 文件夹，下面开始安装并使用 Hexo。
 
-安装并初始化Hexo
+**安装并初始化Hexo**
 
 右键选择 git bash here ，弹出Git Bash窗口；执行命令：
 
@@ -62,7 +62,7 @@ Hexo将source文件夹中的Markdown 和 HTML 文件会被解析并放到public�
 
 ![002](https://img-blog.csdn.net/20180704100855165?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
-2.4 使用nexT主题
+**2.4 使用nexT主题**
 **下载nexT主题**
 
 在Git Bash终端执行以下命令：
@@ -72,7 +72,7 @@ Hexo将source文件夹中的Markdown 和 HTML 文件会被解析并放到public�
 $ git clone https://github.com/iissnan/hexo-theme-next themes/next
 ```
 
-解压所下载的压缩包至站点的 themes 目录下， 并将解压后的文件夹名称更改为 next 。本文使用hexo-theme-next-5.0.1，需要的用户可以点此下载 。
+解压所下载的压缩包至站点的 themes 目录下， 并将解压后的文件夹名称更改为 next 。本文使用hexo-theme-next-5.0.1 。
 
 **启用nexT主题**
 
@@ -93,7 +93,7 @@ scheme: Pisces
 
 博客预览如图：
 
-004
+![这里写图片描述](https://img-blog.csdn.net/20180704172200197?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 3. NexT主题配置
 3.1 主题基本设定
@@ -118,8 +118,9 @@ comments: false
 ```
 创建标签页的方法同上，只需要将type字段设置为"tags"即可。
 
-3.2 添加侧栏社交链接和友链
-添加侧栏社交链接
+**3.2 添加侧栏社交链接和友链**
+
+**添加侧栏社交链接**
 
 在主题配置文件 _config.yml中Sidebar Settings部分添加字段：
 
@@ -137,7 +138,7 @@ social:
   }
 ```
 
-添加侧栏友情链接
+**添加侧栏友情链接**
 
 在主题配置文件 _config.yml中Sidebar Settings部分添加字段：
 
@@ -178,7 +179,7 @@ links:
 {% endfor %}
 ```
 
-3.3 设置阅读次数统计
+**3.3 设置阅读次数统计**
 需要在leanCloud注册一个账号, 前往 https://leancloud.cn/dashboard , 注册账号是为了得到一个appId 和appKey, 如下图所示:
 ![这里写图片描述](https://img-blog.csdn.net/20180704103006573?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 具体的操作就不多说了, 请查看 [这里的教程](https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud)
@@ -190,7 +191,7 @@ leancloud_visitors:
   app_id: joaeuuc4hsqudUUwx4gIvGF6-gzGzoHsz
   app_key: E9UJsJpw1omCHuS22PdSpKoh
 ```
-3.4 添加cnzz站长统计
+**3.4 添加cnzz站长统计**
 **添加站长统计**
 
 到[友盟+](https://err.taobao.com/error1.html?c=404&u=https://www.taobao.com/markets/umplus/www/signup?spm=0.0.0.0.ma5nae&r=http://www.wuxubj.cn/2016/08/Hexo-nexT-build-personal-blog/)注册账户，并添加自己的网站域名，获取到一个站点ID，这个ID可以在地址栏里，或者自动生成的脚本里面找到。
@@ -225,7 +226,7 @@ cnzz_siteid: 1259784696
 {% endif %}
 ```
 
-4.网站发布
+**4.网站发布**
 **4.1 云主机**
 学生党推荐参加腾讯云云+校园优惠活动，云主机+CN域名只需1元/月。
 工作党建议花钱购买云主机，个人博客选择最便宜的就行，一年几百元人民币。
@@ -236,7 +237,8 @@ Coding Pages 的使用教程参见：将hexo博客同时托管到github和coding
 
 我刚开始建站的时候使用的是GitHub pages，后来也部署到了Coding，但访问速度都不咋令人满意。最后我选择了腾讯云主机，顿时感觉访问速度飞快。
 
-5 NexT主题美化
+**5 NexT主题美化**
+
 **5.1 修改导航栏图标**
 NexT 使用的是 [Font Awesome](https://fontawesome.com/?from=io) 提供的图标， [Font Awesome](https://fontawesome.com/?from=io) 提供了 600+ 的图标，可以满足绝大的多数的场景，同时无须担心在 Retina 屏幕下 图标模糊的问题。对应的文件在themes\next\source\vendors\font-awesome中。
 在http://fontawesome.dashgame.com/中有图标与其名称的对应，用户可根据需要修改图标。我的menu_icons配置为：
@@ -251,6 +253,7 @@ menu_icons:
   tags: tags
   archives: calendar-check-o
 ```
+
 
 **5.2 修改文章内链接文本样式**
 将链接文本设置为蓝色，鼠标划过时文字颜色加深，并显示下划线。
@@ -303,7 +306,7 @@ passage_end_tag:
 
 完成以上设置之后，在每篇文章之后都会添加“本文结束”标记。
 该功能简易添加方法参见：[Issues of hexo-theme-next](https://github.com/iissnan/hexo-theme-next/issues/1039)
-5.4 文章末尾添加网站二维码
+**5.4 文章末尾添加网站二维码**
 **利用 NexT 主题自带的wechat_subscriber功能在文章末尾添加网站二维码。**
 首先生成你网站的二维码，放到网站根目录下的images文件夹中，然后修改主题配置文件 _config.yml，添加如下内容：
 ```
@@ -314,14 +317,14 @@ wechat_subscriber:
   description: 扫一扫，用手机访问本站
 ```
 
-5.5 其他美化
+**5.5 其他美化**
 1.标签云页面鼠标划过字体加粗
 2.文章末尾标签鼠标划过变蓝色
 3.调换文章末尾上一篇和下一篇链接显示位置（左右互换）
 4.优化文章末尾上一篇和下一篇链接显示效果完成以上设置之后，在每篇文章之后都会添加网站二维码。
 
 
-6.SEO推广
+**6.SEO推广**
 **6.1 生成sitemap**
 Sitemap用于通知搜索引擎网站上有哪些可供抓取的网页，以便搜索引擎可以更加智能地抓取网站。
 执行以下命令，安装插件hexo-generator-sitemap，用于生成sitemap：
@@ -346,14 +349,14 @@ path: sitemap.xml
 ```
 baidu_push: true
 ```
-6.3 使用各大搜索引擎站长工具
+**6.3 使用各大搜索引擎站长工具**
 	在搜索引擎搜索框输入site:your.domain可以查看域名是否被该搜索引擎收录，用户可以使用各大搜索引擎站长工具提交个人博客网址。
 
-7.更换配置
+**7.更换配置**
 	这里记录一个我遇到的麻烦, 更换电脑之后,重新更新博客,遇到了一系列的问题,我的博客是备份在了github上面,当我拉下代码发现_.config.html文件不存在, 而使用hexo的都知道,hexo主要是需要配置文件, 幸好原来的电脑还保存着一份配置文件, 于是新建了一个文件夹, 然后hexo init  , hexo g ,hexo s,打开localhost:4000就可以看到生成了一个博客, 这时,替换配置文件, 并把拉下来的代码放置到source文件夹中 .之后又出现了git的问题, 很明显, ssh key肯定是不对的, 那么就需要进行设置了, 这个可以参考我的[这篇文章](https://www.jianshu.com/p/301afa16f471)
 	这里提醒一下各位,如果是刚开始建博客, 最好设置两个分支,dev/master用来放置静态网站页面文件,hexo分支用来放置配置文件.具体可以参考[网上的资源](https://blog.csdn.net/Rainy_X/article/details/79829181)
 
-8.相关资源
+**8.相关资源**
 [我的站点文件备份](https://github.com/yidongying/yidongying.github.io)
 [优化之后的NexT主题下载](https://github.com/wuxubj/hexo-theme-next-wuxubj/releases)
 [markdownpad2](http://markdownpad.com/)
@@ -361,7 +364,7 @@ baidu_push: true
 [Git-2.8.1-64-bit](https://git-scm.com/)
 [node-v4.4.2-x64](https://nodejs.org/zh-cn/)
 
-9.参考文档
+**9.参考文档**
 (1)[hexo官方文档](https://hexo.io/zh-cn/docs/)
 (2) [next主题官方文档](http://theme-next.iissnan.com/)
 (3) [第三方服务集成](http://theme-next.iissnan.com/third-party-services.html#algolia-search)
