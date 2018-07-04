@@ -1,38 +1,51 @@
 ---
-title: Hello World
+title: 使用hexo+github搭建个人博客(基础篇)
+date: 2017-3-22
+tags:
+categories: 博客搭建
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+## 开始
+本文为建站初期小结，查看完整建站教程：<a href = ''>Hexo+nexT主题搭建个人博客</a>
 
-## Quick Start
+讲述Hexo的安装，nexT主题的下载及其简单配置。
 
-### Create a new post
+### 安装HEXO
+切换到博客所在目录，运行Git Bash，依次执行以下命令：
 
-``` bash
-$ hexo new "My New Post"
-```
 
-More info: [Writing](https://hexo.io/docs/writing.html)
+$ npm install -g hexo-cli
+$ hexo init
+$ npm install
+### 指定博客文件夹的目录如下：
 
-### Run server
 
-``` bash
-$ hexo server
-```
+├── _config.yml
+├── package.json
+├── scaffolds
+├── source
+|   ├── _drafts
+|   └── _posts
+└── themes
+### 运行：
 
-More info: [Server](https://hexo.io/docs/server.html)
+$ hexo g
+$ hexo s
 
-### Generate static files
+在浏览器中输入：http://localhost:4000/即可访问本地博客，如下图所示：
 
-``` bash
-$ hexo generate
-```
+参考: HEXO官方帮助文档
 
-More info: [Generating](https://hexo.io/docs/generating.html)
+### 下载NexT主题
+切换到博客所在目录，运行Git Bash，执行以下命令：
 
-### Deploy to remote sites
+$  git clone https://github.com/iissnan/hexo-theme-next themes/next
+打开站点配置文件_config.yml，将其中的theme: landscape改为theme: next，保存修改，执行hexo g,hexo s,在浏览器中查看本地博客如图：
 
-``` bash
-$ hexo deploy
-```
 
-More info: [Deployment](https://hexo.io/docs/deployment.html)
+
+### NexT主题简单配置
+根据NexT官方帮助文档，选择scheme为Mist，界面语言为zh-Hans，选择侧栏位置为right，侧栏显示时机为post,添加站点图像，作者昵称，站点描述等基本信息，效果如图：
+
+### 完成
+
+至此，个人博客雏形基本显现，下一步进行优化。
