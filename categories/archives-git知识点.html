@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Hexo简介Hexo 是一款基于 Node.js 的静态博客框架。Hexo 使用 Markdown 解析文章，用户在本地安装Hexo并进行写作，通过一条命令，Hexo即可利用靓丽的主题自动生成静态网页。参考：Hexo-Github地址        Hexo帮助文档 博客环境搭建2.1 安装GitWindows平台：以 Win7 64位机为例  到官网下载 Git，一路默认选项安装。本文使用的是">
+<meta name="keywords" content="小鱼 前端 程序媛 码农 工程师">
+<meta property="og:type" content="website">
+<meta property="og:title" content="易冬英的博客">
+<meta property="og:url" content="https://yidongying.github.io/categories/archives-git知识点.html">
+<meta property="og:site_name" content="易冬英的博客">
+<meta property="og:description" content="Hexo简介Hexo 是一款基于 Node.js 的静态博客框架。Hexo 使用 Markdown 解析文章，用户在本地安装Hexo并进行写作，通过一条命令，Hexo即可利用靓丽的主题自动生成静态网页。参考：Hexo-Github地址        Hexo帮助文档 博客环境搭建2.1 安装GitWindows平台：以 Win7 64位机为例  到官网下载 Git，一路默认选项安装。本文使用的是">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://img-blog.csdn.net/20180704101848462?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180704100855165?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180704101136590?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180704103006573?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:updated_time" content="2018-07-04T04:05:06.634Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="易冬英的博客">
+<meta name="twitter:description" content="Hexo简介Hexo 是一款基于 Node.js 的静态博客框架。Hexo 使用 Markdown 解析文章，用户在本地安装Hexo并进行写作，通过一条命令，Hexo即可利用靓丽的主题自动生成静态网页。参考：Hexo-Github地址        Hexo帮助文档 博客环境搭建2.1 安装GitWindows平台：以 Win7 64位机为例  到官网下载 Git，一路默认选项安装。本文使用的是">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20180704101848462?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://yidongying.github.io/categories/archives-git知识点.html"/>
+
+
+
+
+
+  <title> | 易冬英的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">易冬英的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">大鱼吃小鱼</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
+
+	<h1 class="post-title" itemprop="name headline"></h1>
+
+
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+        
+        
+          <ol>
+<li>Hexo简介<br>Hexo 是一款基于 Node.js 的静态博客框架。Hexo 使用 Markdown 解析文章，用户在本地安装Hexo并进行写作，通过一条命令，Hexo即可利用靓丽的主题自动生成静态网页。<br>参考：<a href="https://github.com/hexojs/hexo" target="_blank" rel="noopener">Hexo-Github地址</a>        <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo帮助文档</a><br><img src="https://img-blog.csdn.net/20180704101848462?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></li>
+<li>博客环境搭建<br>2.1 安装Git<br>Windows平台：以 Win7 64位机为例</li>
+</ol>
+<p>到<a href="https://git-scm.com/download" target="_blank" rel="noopener">官网</a>下载 Git，一路默认选项安装。本文使用的是Git-2.8.1-64-bit. </p>
+<p>Linux平台</p>
+<p>2.2 安装Node.js<br>Windows平台：以 Win7 64位机为例</p>
+<p>到官网下载 Node.js，一路默认选项安装。本文使用的是node-v4.4.2-x64，需要的用户可以点此下载 。</p>
+<p>Linux平台</p>
+<p>2.3 安装Hexo<br>Git 和 Node.js 都安装好后,首先创建一个用于存放博客文件的文件夹，如 blog，然后进入 blog 文件夹，下面开始安装并使用 Hexo。</p>
+<p>安装并初始化Hexo</p>
+<p>右键选择 git bash here ，弹出Git Bash窗口；执行命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
+<p>安装完成后，指定文件夹的目录如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure></p>
+<p>其中<strong>_config.yml</strong>文件用于存放网站的配置信息，你可以在此配置大部分的参数；<strong>scaffolds</strong>是存放模板的文件夹，当新建文章时，Hexo会根据<strong>scaffold</strong>来建立文件；<strong>source</strong>是资源文件夹，用于存放用户资源，<strong>themes</strong>是主题文件夹，存放博客主题，Hexo 会根据主题来生成静态页面。</p>
+<p><strong>生成静态博客文件</strong></p>
+<p>在Git Bash终端执行命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+<p>Hexo将source文件夹中的Markdown 和 HTML 文件会被解析并放到public文件夹中，public文件夹用于存放静态博客文件，相当于网站根目录。<br>至此博客雏形基本完成，在浏览器中访问<a href="http://localhost:4000/，如图所示：" target="_blank" rel="noopener">http://localhost:4000/，如图所示：</a></p>
+<p><img src="https://img-blog.csdn.net/20180704100855165?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="002"></p>
+<p>2.4 使用nexT主题<br><strong>下载nexT主题</strong></p>
+<p>在Git Bash终端执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<p>解压所下载的压缩包至站点的 themes 目录下， 并将解压后的文件夹名称更改为 next 。本文使用hexo-theme-next-5.0.1，需要的用户可以点此下载 。</p>
+<p><strong>启用nexT主题</strong></p>
+<p>打开站点配置文件 _config.yml，找到 theme 字段，并将其值更改为 next。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+<p>在Git Bash终端执行命令hexo s，在浏览器中访问<a href="http://localhost:4000/，当你看到站点的外观与下图所示类似时即说明你已成功安装" target="_blank" rel="noopener">http://localhost:4000/，当你看到站点的外观与下图所示类似时即说明你已成功安装</a> NexT 主题。这是 NexT 默认的 Scheme —— Muse。</p>
+<p><img src="https://img-blog.csdn.net/20180704101136590?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="003"><br>本博客使用的是NexT.Pisces主题，修改主题配置文件 _config.yml的 Schemes 字段的值为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scheme: Pisces</span><br></pre></td></tr></table></figure>
+<p>博客预览如图：</p>
+<p>004</p>
+<ol start="3">
+<li>NexT主题配置<br>3.1 主题基本设定<br>参照<a href="http://theme-next.iissnan.com/getting-started.html#theme-settings" target="_blank" rel="noopener">NexT使用文档</a>，设置界面语言、菜单、侧栏、头像、作者昵称和站点描述。由于该使用文档描述非常详细，本文不再赘述。此处需要注意，添加新的菜单项时，需要手动创建该页面才能正常访问，下面以分类页面为例讲述创建新页面的方法：</li>
+</ol>
+<p><strong>创建分类页面</strong></p>
+<p>在Git Bash终端执行命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
+<p><strong>编辑分类页面</strong></p>
+<p>添加页面类型字段，将其值设置为 “categories”，主题将自动为这个页面显示所有分类，如果有启用多说 或者 Disqus 评论，默认页面也会带有评论。需要关闭的话，请添加字段 comments 并将值设置为 false。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: 分类</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">comments: false</span><br></pre></td></tr></table></figure></p>
+<p>创建标签页的方法同上，只需要将type字段设置为”tags”即可。</p>
+<p>3.2 添加侧栏社交链接和友链<br>添加侧栏社交链接</p>
+<p>在主题配置文件 _config.yml中Sidebar Settings部分添加字段：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Social Links</span><br><span class="line">social:</span><br><span class="line">  GitHub: https://github.com/wuxubj</span><br><span class="line">  Weibo: http://weibo.com/wuxubj</span><br></pre></td></tr></table></figure>
+<p>本博客将侧栏社交链接设置居中显示，修改themes\next\source\css_common\components\sidebar\sidebar-author-links.styl文件，添加如下样式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.links-of-author-item &#123;</span><br><span class="line">  text-align: center;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>添加侧栏友情链接</p>
+<p>在主题配置文件 _config.yml中Sidebar Settings部分添加字段：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Blogrolls</span><br><span class="line">links_title: 友情链接</span><br><span class="line">links_layout: inline</span><br><span class="line">links_icon: link  # 设置图标</span><br><span class="line">links:</span><br><span class="line">  鱼汐笔记: https://yidongying.github.io/</span><br></pre></td></tr></table></figure>
+<p>本博客侧栏友情链接使用了与侧栏社交链接相同的css样式，但文本左对齐。实现方法为：<br>修改themes\next\layout_macro\sidebar.swig，将如下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul class=&quot;links-of-blogroll-list&quot;&gt;</span><br><span class="line">  &#123;% for name, link in theme.links %&#125;</span><br><span class="line">    &lt;li class=&quot;links-of-blogroll-item&quot;&gt;</span><br><span class="line">      &lt;a href=&quot;&#123;&#123; link &#125;&#125;&quot; title=&quot;&#123;&#123; name &#125;&#125;&quot; target=&quot;_blank&quot;&gt;</span><br><span class="line">        &#123;&#123; name &#125;&#125;</span><br><span class="line">      &lt;/a&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">  &#123;% endfor %&#125;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+<p>修改为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for name, link in theme.links %&#125;</span><br><span class="line">  &lt;span class=&quot;links-of-author-item&quot; style=&quot;text-align:left&quot;&gt;</span><br><span class="line">    &lt;a href=&quot;&#123;&#123; link &#125;&#125;&quot; title=&quot;&#123;&#123; name &#125;&#125;&quot; target=&quot;_blank&quot;&gt;</span><br><span class="line">      &#123;&#123; name &#125;&#125;</span><br><span class="line">    &lt;/a&gt;</span><br><span class="line">  &lt;/span&gt;</span><br><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
+<p>3.3 设置阅读次数统计<br>需要在leanCloud注册一个账号, 前往 <a href="https://leancloud.cn/dashboard" target="_blank" rel="noopener">https://leancloud.cn/dashboard</a> , 注册账号是为了得到一个appId 和appKey, 如下图所示:<br><img src="https://img-blog.csdn.net/20180704103006573?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br>具体的操作就不多说了, 请查看 <a href="https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud" target="_blank" rel="noopener">这里的教程</a><br>复制AppID以及AppKey并在NexT主题的_config.yml文件中我们相应的位置填入即可，正确配置之后文件内容像这个样子:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">leancloud_visitors:</span><br><span class="line">  enable: true</span><br><span class="line">  app_id: joaeuuc4hsqudUUwx4gIvGF6-gzGzoHsz</span><br><span class="line">  app_key: E9UJsJpw1omCHuS22PdSpKoh</span><br></pre></td></tr></table></figure>
+<p>3.4 添加cnzz站长统计<br><strong>添加站长统计</strong></p>
+<p>到<a href="https://err.taobao.com/error1.html?c=404&amp;u=https://www.taobao.com/markets/umplus/www/signup?spm=0.0.0.0.ma5nae&amp;r=http://www.wuxubj.cn/2016/08/Hexo-nexT-build-personal-blog/" target="_blank" rel="noopener">友盟+</a>注册账户，并添加自己的网站域名，获取到一个站点ID，这个ID可以在地址栏里，或者自动生成的脚本里面找到。<br>在主题配置文件 _config.yml中添加如下字段：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># CNZZ count</span><br><span class="line">cnzz_siteid: 1259784696</span><br></pre></td></tr></table></figure>
+<p><strong>注意把字段cnzz_siteid的值修改为你自己的站点ID。</strong><br>修改themes\next\layout_layout.swig文件，添加如下内容，用于生成cnzz统计代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% include &apos;_scripts/third-party/analytics/cnzz-analytics.swig&apos; %&#125;</span><br></pre></td></tr></table></figure>
+<p>至此cnzz站长统计功能已经添加。由于默认默认不显示“站长统计”字样，所以从页面外观看不到任何变化。</p>
+<p><strong>页脚添加“站长统计”链接</strong></p>
+<p>修改\themes\next\layout_partials\footer.swig文件，在<span class="author" itemprop="copyrightHolder"></span>后面添加如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.cnzz_siteid %&#125;</span><br><span class="line">   &lt;span style=&quot;margin-left:8px;&quot;&gt;</span><br><span class="line">   &lt;script src=&quot;http://s6.cnzz.com/stat.php?id=&#123;&#123; theme.cnzz_siteid &#125;&#125;&amp;web_id=&#123;&#123; theme.cnzz_siteid &#125;&#125;&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</span><br><span class="line">   &lt;/span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>4.网站发布<br><strong>4.1 云主机</strong><br>学生党推荐参加腾讯云云+校园优惠活动，云主机+CN域名只需1元/月。<br>工作党建议花钱购买云主机，个人博客选择最便宜的就行，一年几百元人民币。<br><strong>4.2 Git托管的Pages服务</strong><br>常用的有GitHub pages和Coding Pages。<br>GitHub pages 的使用教程参见：GitHub Pages + Hexo搭建博客 Hexo 3.1.1 静态博客搭建指南<br>Coding Pages 的使用教程参见：将hexo博客同时托管到github和coding</p>
+<p>我刚开始建站的时候使用的是GitHub pages，后来也部署到了Coding，但访问速度都不咋令人满意。最后我选择了腾讯云主机，顿时感觉访问速度飞快。</p>
+<p>5 NexT主题美化<br><strong>5.1 修改导航栏图标</strong><br>NexT 使用的是 <a href="https://fontawesome.com/?from=io" target="_blank" rel="noopener">Font Awesome</a> 提供的图标， <a href="https://fontawesome.com/?from=io" target="_blank" rel="noopener">Font Awesome</a> 提供了 600+ 的图标，可以满足绝大的多数的场景，同时无须担心在 Retina 屏幕下 图标模糊的问题。对应的文件在themes\next\source\vendors\font-awesome中。<br>在<a href="http://fontawesome.dashgame.com/中有图标与其名称的对应，用户可根据需要修改图标。我的menu_icons配置为：" target="_blank" rel="noopener">http://fontawesome.dashgame.com/中有图标与其名称的对应，用户可根据需要修改图标。我的menu_icons配置为：</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">menu_icons:</span><br><span class="line">  enable: true</span><br><span class="line">  #KeyMapsToMenuItemKey: NameOfTheIconFromFontAwesome</span><br><span class="line">  home: home</span><br><span class="line">  about: user</span><br><span class="line">  categories: th</span><br><span class="line">  tags: tags</span><br><span class="line">  archives: calendar-check-o</span><br></pre></td></tr></table></figure>
+<p><strong>5.2 修改文章内链接文本样式</strong><br>将链接文本设置为蓝色，鼠标划过时文字颜色加深，并显示下划线。<br>修改文件themes\next\source\css_common\components\post\post.styl，添加如下css样式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.post-body p a&#123;</span><br><span class="line">  color: #0593d3;</span><br><span class="line">  border-bottom: none;</span><br><span class="line">  &amp;:hover &#123;</span><br><span class="line">    color: #0477ab;</span><br><span class="line">    text-decoration: underline;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>选择.post-body是为了不影响标题，选择p是为了不影响首页“阅读全文”的显示样式。</p>
+<p><strong>5.3 文章末尾添加本文结束标记</strong></p>
+<p><strong>新建 passage-end-tag.swig 文件</strong><br>在路径\themes\next\layout_macro中添加passage-end-tag.swig文件，其内容为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.passage_end_tag.enabled %&#125;</span><br><span class="line">&lt;div style=&quot;text-align:center;color: #ccc;font-size:14px;&quot;&gt;</span><br><span class="line">------ 本文结束 ------&lt;/div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>修改 post.swig 文件</strong><br>在\themes\next\layout_macro\post.swig中，post-body之后，post-footer之前添加如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &#123;% if not is_index %&#125;</span><br><span class="line">    &#123;% include &apos;passage-end-tag.swig&apos; %&#125;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>在主题配置文件中添加字段</strong></p>
+<p>在主题配置文件 _config.yml中添加以下字段开启此功能：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 文章末尾添加“本文结束”标记</span><br><span class="line">passage_end_tag:</span><br><span class="line">  enabled: true</span><br></pre></td></tr></table></figure>
+<p>完成以上设置之后，在每篇文章之后都会添加“本文结束”标记。<br>该功能简易添加方法参见：<a href="https://github.com/iissnan/hexo-theme-next/issues/1039" target="_blank" rel="noopener">Issues of hexo-theme-next</a><br>5.4 文章末尾添加网站二维码<br><strong>利用 NexT 主题自带的wechat_subscriber功能在文章末尾添加网站二维码。</strong><br>首先生成你网站的二维码，放到网站根目录下的images文件夹中，然后修改主题配置文件 _config.yml，添加如下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Wechat Subscriber</span><br><span class="line">wechat_subscriber:</span><br><span class="line">  enabled: true</span><br><span class="line">  qcode: /images/wuxubj.png</span><br><span class="line">  description: 扫一扫，用手机访问本站</span><br></pre></td></tr></table></figure></p>
+<p>5.5 其他美化<br>1.标签云页面鼠标划过字体加粗<br>2.文章末尾标签鼠标划过变蓝色<br>3.调换文章末尾上一篇和下一篇链接显示位置（左右互换）<br>4.优化文章末尾上一篇和下一篇链接显示效果完成以上设置之后，在每篇文章之后都会添加网站二维码。</p>
+<p>6.SEO推广<br><strong>6.1 生成sitemap</strong><br>Sitemap用于通知搜索引擎网站上有哪些可供抓取的网页，以便搜索引擎可以更加智能地抓取网站。<br>执行以下命令，安装插件hexo-generator-sitemap，用于生成sitemap：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
+<p>在站点配置文件 _config.yml中添加如下字段：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sitemap:</span><br><span class="line">path: sitemap.xml</span><br></pre></td></tr></table></figure>
+<p>执行hexo g，就会在网站根目录生成 sitemap.xml 。</p>
+<p><strong>6.2 开启百度自动推送</strong><br>在主题配置文件 _config.yml中添加如下字段：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">baidu_push: true</span><br></pre></td></tr></table></figure></p>
+<p>6.3 使用各大搜索引擎站长工具<br>    在搜索引擎搜索框输入site:your.domain可以查看域名是否被该搜索引擎收录，用户可以使用各大搜索引擎站长工具提交个人博客网址。</p>
+<p>7.更换配置<br>    这里记录一个我遇到的麻烦, 更换电脑之后,重新更新博客,遇到了一系列的问题,我的博客是备份在了github上面,当我拉下代码发现_.config.html文件不存在, 而使用hexo的都知道,hexo主要是需要配置文件, 幸好原来的电脑还保存着一份配置文件, 于是新建了一个文件夹, 然后hexo init  , hexo g ,hexo s,打开localhost:4000就可以看到生成了一个博客, 这时,替换配置文件, 并把拉下来的代码放置到source文件夹中 .之后又出现了git的问题, 很明显, ssh key肯定是不对的, 那么就需要进行设置了, 这个可以参考我的<a href="https://www.jianshu.com/p/301afa16f471" target="_blank" rel="noopener">这篇文章</a><br>    这里提醒一下各位,如果是刚开始建博客, 最好设置两个分支,dev/master用来放置静态网站页面文件,hexo分支用来放置配置文件.具体可以参考<a href="https://blog.csdn.net/Rainy_X/article/details/79829181" target="_blank" rel="noopener">网上的资源</a></p>
+<p>8.相关资源<br><a href="https://github.com/yidongying/yidongying.github.io" target="_blank" rel="noopener">我的站点文件备份</a><br><a href="https://github.com/wuxubj/hexo-theme-next-wuxubj/releases" target="_blank" rel="noopener">优化之后的NexT主题下载</a><br><a href="http://markdownpad.com/" target="_blank" rel="noopener">markdownpad2</a><br><a href="https://notepad-plus-plus.org/download/v6.9.2.html" target="_blank" rel="noopener">Notepad++ v6.9.2</a><br><a href="https://git-scm.com/" target="_blank" rel="noopener">Git-2.8.1-64-bit</a><br><a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">node-v4.4.2-x64</a></p>
+<p>9.参考文档<br>(1)<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">hexo官方文档</a><br>(2) <a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">next主题官方文档</a><br>(3) <a href="http://theme-next.iissnan.com/third-party-services.html#algolia-search" target="_blank" rel="noopener">第三方服务集成</a><br>(4)<a href="https://github.com/iissnan/hexo-theme-next/wiki/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E5%8F%82%E8%80%83" target="_blank" rel="noopener">next主题特性配置</a><br>(5)<a href="https://blog.csdn.net/wxl1555/article/details/79293159" target="_blank" rel="noopener">电脑更换后的问题</a></p>
+
+        
+      </div>
+      
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="大鱼吃小鱼@" />
+            
+              <p class="site-author-name" itemprop="name">大鱼吃小鱼@</p>
+              <p class="site-description motion-element" itemprop="description">记录IT,记录成长,愿在输得起的年纪,创造更多的奇迹</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yidongying" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/yi-dong-ying-72/activities" target="_blank" title="Zhihu">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Zhihu</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/5222949342/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/391db4b0360a" target="_blank" title="Jianshu">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Jianshu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情连接
+              </div>
+              <ul class="links-of-blogroll-list">
+               
+                <span class="links-of-author-item" style="text-align:left">
+                  <a href="https://yidongying.github.io/" title="鱼汐笔记" target="_blank">
+                    鱼汐笔记
+                  </a>
+                </span>
+              
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">大鱼吃小鱼@</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("inY1AtIRYvoTTvLxcFHkLbd4-gzGzoHsz", "KY2YVwAqi9L9bNB8RU2kLRx6");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
