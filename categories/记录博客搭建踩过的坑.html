@@ -92,7 +92,7 @@
 <meta property="og:image" content="https://img-blog.csdn.net/20180704161327622?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 <meta property="og:image" content="https://img-blog.csdn.net/2018070416323750?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 <meta property="og:image" content="https://img-blog.csdn.net/2018070416543571?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2018-07-04T09:05:26.993Z">
+<meta property="og:updated_time" content="2018-07-04T09:07:34.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="易冬英的博客">
 <meta name="twitter:description" content="本人的博客使用的是hexo+github搭建的一套独立博客, 主题采用的是next,经过两天的折腾, 博客也弄得有模有样了.(微笑).现在记录一下踩过的坑,希望自己可以好好总结, 能帮助到萌新就更好了,哈哈!问题不分顺序,本人比较懒, 想到啥就写啥. 1.解决编辑器的问题hexo是使用markdown编辑器的,如果不想在本地安装markDown,(我就懒得安装), 那么CSDN了解一下.在CSDN">
@@ -294,15 +294,15 @@
 <p>如果是需要在README.md中查看到博客网址的话,可以在README.md中使用一个a标签,href链接地址就是这个红色框的地址. 如果是其他仓库,则需要加上index.html索引文件 .<br>如果没有出现上面所说的网址,打开链接的错误地址,如果是遇到下面这个问题 :<br><img src="https://img-blog.csdn.net/2018070416323750?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br>很明显,是部署失败了, 那么就重新部署吧.<br>部署之前一定要安装这个包</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git –save</span><br></pre></td></tr></table></figure>
 <p>然后执行 hexo d -g</p>
-<p>5.空格问题<br>需要注意的是,在_config.yml配置文件中,属性名和属性值之间一定要有一个空格<br>不然你会遇到类似下面这种问题:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">错误提示：FATAL bad indentation of a mapping entry at line 72, column 7:</span><br></pre></td></tr></table></figure></p>
+<p><strong>5.空格问题</strong><br>需要注意的是,在_config.yml配置文件中,属性名和属性值之间一定要有一个空格<br>不然你会遇到类似下面这种问题:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">错误提示：FATAL bad indentation of a mapping entry at line 72, column 7:</span><br></pre></td></tr></table></figure></p>
 <p>或者这种问题</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">错误提示：</span><br><span class="line">You should configure deployment settings in _config.yml first!</span><br><span class="line">Available deployer plugins:</span><br><span class="line">  git</span><br><span class="line">For more help, you can check the online docs: http://hexo.io/</span><br></pre></td></tr></table></figure>
-<p>6.404可能原因<br>(1).域名解析错误。</p>
+<p><strong>6.404可能原因</strong><br>(1).域名解析错误。</p>
 <p>检查： windows下cmd命令符输入ping cheatlys.info（你的域名） 看一下ip地址，在ping一下你github上的，ping liuyongshun.github.io看一下是否一样，并且没有请求超时。</p>
 <p>(2).你的域名是通过国内注册商注册的，因没有实名制而无法访问。</p>
 <p>(3).浏览器缓存，路由器缓存。可尝试清除浏览器缓存再访问或者换个浏览器访问，或者换个局域网访问。</p>
 <p>(4). 你的hexo配置有问题，而导致index页面在主域名的下一级目录。找到index页面，在域名后面添加下一级目录。看是否能访问index页面（此时样式可能是乱的）。直接在.github.io的库（相当于根目录，在_config.yml配置root时直接是/如果这些内容在blog下，root应该是/blog/）下边展开这些内容。<br><img src="https://img-blog.csdn.net/2018070416543571?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<p>7.绑定域名<br>你需要在本地的source下建立CNAME文件(是文件不是文件夹也没有拓展名)，内容就是你买的的域名（例：不要<a href="http://www.cheatlys.info，而是写cheatlys.info前者直接输入cheatlys.info不会连接到你的网站。）" target="_blank" rel="noopener">www.cheatlys.info，而是写cheatlys.info前者直接输入cheatlys.info不会连接到你的网站。）</a></p>
+<p><strong>7.绑定域名</strong><br>你需要在本地的source下建立CNAME文件(是文件不是文件夹也没有拓展名)，内容就是你买的的域名（例：不要<a href="http://www.cheatlys.info，而是写cheatlys.info前者直接输入cheatlys.info不会连接到你的网站。）" target="_blank" rel="noopener">www.cheatlys.info，而是写cheatlys.info前者直接输入cheatlys.info不会连接到你的网站。）</a></p>
 <p>暂时先写到这里啦,后面想起来再写,</p>
 
         
