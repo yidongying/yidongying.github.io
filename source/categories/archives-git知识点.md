@@ -13,7 +13,7 @@ Linux平台
 2.2 安装Node.js
 Windows平台：以 Win7 64位机为例
 
-到官网下载 Node.js，一路默认选项安装。本文使用的是node-v4.4.2-x64，需要的用户可以点此下载 。
+到官网下载 Node.js，一路默认选项安装。本文使用的是node-v4.4.2-x64 。
 
 Linux平台
 
