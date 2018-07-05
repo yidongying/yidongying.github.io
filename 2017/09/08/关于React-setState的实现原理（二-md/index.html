@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="易冬英的博客">
 <meta property="og:description" content="上一篇文章中,写到了关于Batch Update的实现,有不懂的童鞋可以回头看看 上一篇文章React中的Transaction大家学过sql server的都知道我们可以批量处理sql语句，原理其实都是基于上一篇我们说的Datch Update机制。当所有的操作均执行成功，才会执行修改操作；若有一个操作失败，则执行rollback（回滚）。 在React中，我们介绍过事件会在函数前后执行自己的逻">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-05T02:30:14.356Z">
+<meta property="og:updated_time" content="2018-07-05T02:41:35.037Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于React setState的实现原理（二).md">
 <meta name="twitter:description" content="上一篇文章中,写到了关于Batch Update的实现,有不懂的童鞋可以回头看看 上一篇文章React中的Transaction大家学过sql server的都知道我们可以批量处理sql语句，原理其实都是基于上一篇我们说的Datch Update机制。当所有的操作均执行成功，才会执行修改操作；若有一个操作失败，则执行rollback（回滚）。 在React中，我们介绍过事件会在函数前后执行自己的逻">
@@ -384,7 +384,7 @@
 <p><br><br>接下来再调用setState时（在setTimeout中，前文说过一步操作不会在主线程，我理解是在主线程结束才会执行，此时的主线程事件已经结束），enqueueUpdate不会再将其添加到dirtyComponents中，而是执行batchingStrategy.batchedUpdates(enqueueUpdate, component)开启一个新事务。<br><br><br>但是需要注意，这里传入的参数是enqueueUpdate，即perform中执行的method为enqueueUpdate，而再次调用该enqueueUpdate方法会去执行dirtyComponents那一步。这就可以理解为，处于单独事务的setState也是通过将组件添加到dirtyComponents来完成更新的，只不过这里是在enqueueUpdate执行完毕后立即执行相应的close方法完成更新，而前面两个setState需在整个组件装载完成之后，即在componentDidMount执行完毕后才会去调用close完成更新。总结一下4个setState执行的过程就是：先执行两次console.log，然后执行批量更新，再执行setState直接更新，执行console.log，最后再执行setState直接更新，再执行console.log，所以就会得出0,0,2,3。<br><br><br>到现在上面的问题已经解决，但是又出现一个新问题：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class Root extends React.Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    super(props);</span><br><span class="line">    this.state = &#123;</span><br><span class="line">      count: 0</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    let me = this;</span><br><span class="line">    me.setState(&#123;</span><br><span class="line">      count: me.state.count + 1</span><br><span class="line">    &#125;);</span><br><span class="line">    me.setState(&#123;</span><br><span class="line">      count: me.state.count + 1</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;h1&gt;&#123;this.state.count&#125;&lt;/h1&gt;   //页面中将打印出1</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">class Root extends React.Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    super(props);</span><br><span class="line">    this.state = &#123;</span><br><span class="line">      count: 0</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    let me = this;</span><br><span class="line">    me.setState(function(state, props) &#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        count: state.count + 1</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    me.setState(function(state, props) &#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        count: state.count + 1</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;h1&gt;&#123;this.state.count&#125;&lt;/h1&gt;   //页面中将打印出2</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br><br>这两种写法，一个是在setState中传入了object，一个是传入了function，却得到了两种不同的结果，这是什么原因造成的，这就需要我们去深入了解一下进行批量更行时都做了些什么。</p>
+<p><br><br>这两种写法，一个是在setState中传入了object，一个是传入了function，却得到了两种不同的结果，这是什么原因造成的，这就需要我们去深入了解一下进行批量更行时都做了些什么。<br>关于这个部分, 可以看看我的<a href="https://yidongying.github.io/2018/07/05/%E5%85%B3%E4%BA%8EReact-setState%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%EF%BC%88%E4%B8%89-md/">下一篇文章</a></p>
 
       
     </div>
@@ -428,7 +428,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/07/05/关于React-setState的实现原理（三-md/" rel="prev" title="关于React setState的实现原理（三).md">
+              <a href="/2017/09/10/关于React-setState的实现原理（三-md/" rel="prev" title="关于React setState的实现原理（三).md">
                 关于React setState的实现原理（三).md <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -502,7 +502,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

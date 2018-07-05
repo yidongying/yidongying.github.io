@@ -79,21 +79,18 @@
 
 
 
-<meta name="description" content="开始本文为建站初期小结，查看完整建站教程：Hexo+nexT主题搭建个人博客 讲述Hexo的安装，nexT主题的下载及其简单配置。 安装HEXO切换到博客所在目录，运行Git Bash，依次执行以下命令： $ npm install -g hexo-cli$ hexo init$ npm install 指定博客文件夹的目录如下：├── _config.yml├── package.json├──">
+<meta name="description" content="上一篇文章中提到事务即将结束时，会去调用FLUSH_BATCHED_UPDATES的flushBatchedUpdates方法执行批量更新，该方法会去遍历dirtyComponents，对每一项执行performUpdateIfNecessary方法，该方法代码如下： 123456789performUpdateIfNecessary: function (transaction) &amp;#123;">
 <meta name="keywords" content="小鱼 前端 程序媛 码农 工程师">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用hexo+github搭建个人博客(基础篇)">
-<meta property="og:url" content="https://yidongying.github.io/2017/03/22/hello-world/index.html">
+<meta property="og:title" content="关于React setState的实现原理（三).md">
+<meta property="og:url" content="https://yidongying.github.io/2017/09/10/关于React-setState的实现原理（三-md/index.html">
 <meta property="og:site_name" content="易冬英的博客">
-<meta property="og:description" content="开始本文为建站初期小结，查看完整建站教程：Hexo+nexT主题搭建个人博客 讲述Hexo的安装，nexT主题的下载及其简单配置。 安装HEXO切换到博客所在目录，运行Git Bash，依次执行以下命令： $ npm install -g hexo-cli$ hexo init$ npm install 指定博客文件夹的目录如下：├── _config.yml├── package.json├──">
+<meta property="og:description" content="上一篇文章中提到事务即将结束时，会去调用FLUSH_BATCHED_UPDATES的flushBatchedUpdates方法执行批量更新，该方法会去遍历dirtyComponents，对每一项执行performUpdateIfNecessary方法，该方法代码如下： 123456789performUpdateIfNecessary: function (transaction) &amp;#123;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://img-blog.csdn.net/20180704171716402?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180704171845186?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2018-07-04T09:37:18.658Z">
+<meta property="og:updated_time" content="2018-07-05T02:41:58.780Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用hexo+github搭建个人博客(基础篇)">
-<meta name="twitter:description" content="开始本文为建站初期小结，查看完整建站教程：Hexo+nexT主题搭建个人博客 讲述Hexo的安装，nexT主题的下载及其简单配置。 安装HEXO切换到博客所在目录，运行Git Bash，依次执行以下命令： $ npm install -g hexo-cli$ hexo init$ npm install 指定博客文件夹的目录如下：├── _config.yml├── package.json├──">
-<meta name="twitter:image" content="https://img-blog.csdn.net/20180704171716402?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta name="twitter:title" content="关于React setState的实现原理（三).md">
+<meta name="twitter:description" content="上一篇文章中提到事务即将结束时，会去调用FLUSH_BATCHED_UPDATES的flushBatchedUpdates方法执行批量更新，该方法会去遍历dirtyComponents，对每一项执行performUpdateIfNecessary方法，该方法代码如下： 123456789performUpdateIfNecessary: function (transaction) &amp;#123;">
 
 
 
@@ -123,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://yidongying.github.io/2017/03/22/hello-world/"/>
+  <link rel="canonical" href="https://yidongying.github.io/2017/09/10/关于React-setState的实现原理（三-md/"/>
 
 
 
 
 
-  <title>使用hexo+github搭建个人博客(基础篇) | 易冬英的博客</title>
+  <title>关于React setState的实现原理（三).md | 易冬英的博客</title>
   
 
 
@@ -266,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yidongying.github.io/2017/03/22/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://yidongying.github.io/2017/09/10/关于React-setState的实现原理（三-md/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="大鱼吃小鱼@">
@@ -283,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">使用hexo+github搭建个人博客(基础篇)</h1>
+          <h1 class="post-title" itemprop="name headline">关于React setState的实现原理（三).md</h1>
         
 
         <div class="post-meta">
@@ -295,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-22T00:00:00+08:00">
-                2017-03-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-10T10:30:51+08:00">
+                2017-09-10
               </time>
             
 
@@ -306,28 +303,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/博客搭建/" itemprop="url" rel="index">
-                    <span itemprop="name">博客搭建</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -335,7 +310,7 @@
 
           
           
-             <span id="/2017/03/22/hello-world/" class="leancloud_visitors" data-flag-title="使用hexo+github搭建个人博客(基础篇)">
+             <span id="/2017/09/10/关于React-setState的实现原理（三-md/" class="leancloud_visitors" data-flag-title="关于React setState的实现原理（三).md">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -366,18 +341,18 @@
       
 
       
-        <h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>本文为建站初期小结，查看完整建站教程：<a href="https://yidongying.github.io/2017/03/23/archives-git%E7%9F%A5%E8%AF%86%E7%82%B9/">Hexo+nexT主题搭建个人博客</a></p>
-<p>讲述Hexo的安装，nexT主题的下载及其简单配置。</p>
-<h3 id="安装HEXO"><a href="#安装HEXO" class="headerlink" title="安装HEXO"></a>安装HEXO</h3><p>切换到博客所在目录，运行Git Bash，依次执行以下命令：</p>
-<p>$ npm install -g hexo-cli<br>$ hexo init<br>$ npm install</p>
-<h3 id="指定博客文件夹的目录如下："><a href="#指定博客文件夹的目录如下：" class="headerlink" title="指定博客文件夹的目录如下："></a>指定博客文件夹的目录如下：</h3><p>├── _config.yml<br>├── package.json<br>├── scaffolds<br>├── source<br>|   ├── _drafts<br>|   └── _posts<br>└── themes</p>
-<h3 id="运行："><a href="#运行：" class="headerlink" title="运行："></a>运行：</h3><p>$ hexo g<br>$ hexo s</p>
-<p>在浏览器中输入：<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>  即可访问本地博客，如下图所示：<br><img src="https://img-blog.csdn.net/20180704171716402?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br>参考: <a href="https://hexo.io/zh-cn/docs/troubleshooting.html" target="_blank" rel="noopener">HEXO官方帮助文档</a></p>
-<h3 id="下载NexT主题"><a href="#下载NexT主题" class="headerlink" title="下载NexT主题"></a>下载NexT主题</h3><p>切换到博客所在目录，运行Git Bash，执行以下命令：</p>
-<p>$  git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a> themes/next<br>打开站点配置文件_config.yml，将其中的theme: landscape改为theme: next，保存修改，执行hexo g,hexo s,在浏览器中查看本地博客如图：</p>
-<p><img src="https://img-blog.csdn.net/20180704171845186?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<h3 id="NexT主题简单配置"><a href="#NexT主题简单配置" class="headerlink" title="NexT主题简单配置"></a>NexT主题简单配置</h3><p>根据NexT官方帮助文档，选择scheme为Mist，界面语言为zh-Hans，选择侧栏位置为right，侧栏显示时机为post,添加站点图像，作者昵称，站点描述等基本信息，效果如图：</p>
-<h3 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h3><p>至此，个人博客雏形基本显现，下一步进行优化。</p>
+        <p><a href="https://yidongying.github.io/2017/09/08/%E5%85%B3%E4%BA%8EReact-setState%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%EF%BC%88%E4%BA%8C-md/">上一篇文章中</a>提到事务即将结束时，会去调用FLUSH_BATCHED_UPDATES的flushBatchedUpdates方法执行批量更新，该方法会去遍历dirtyComponents，对每一项执行performUpdateIfNecessary方法，该方法代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">performUpdateIfNecessary: function (transaction) &#123;</span><br><span class="line">    if (this._pendingElement != null) &#123;</span><br><span class="line">      ReactReconciler.receiveComponent(this, this._pendingElement, transaction, this._context);</span><br><span class="line">    &#125; else if (this._pendingStateQueue !== null || this._pendingForceUpdate) &#123;</span><br><span class="line">      this.updateComponent(transaction, this._currentElement, this._currentElement, this._context, this._context);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      this._updateBatchNumber = null;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>在我们的setState更新中，其实只会用到第二个  <strong>this._pendingStateQueue !== null</strong>  的判断，即如果<strong>_pendingStateQueue</strong>中还存在未处理的<strong>state</strong>，那就会执行<strong>updateComponent</strong>完成更新。<br>那<strong>_pendingStateQueue</strong>是何时被处理的呢，继续看！</p>
+<p>通过翻阅<strong>updateComponent</strong>方法，我们可以知道<strong>_pendingStateQueue</strong>是在该方法中由<strong>_processPendingState(nextProps, nextContext)</strong>方法做了一些处理，该方法传入两个参数，新的props属性和新的上下文环境，这个上下文环境可以先不用管。我们看看<strong>_processPendingState</strong>的具体实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">_processPendingState: function (props, context) &#123;</span><br><span class="line">    var inst = this._instance;    // _instance保存了Constructor的实例，即通过ReactClass创建的组件的实例</span><br><span class="line">    var queue = this._pendingStateQueue;</span><br><span class="line">    var replace = this._pendingReplaceState;</span><br><span class="line">    this._pendingReplaceState = false;</span><br><span class="line">    this._pendingStateQueue = null;</span><br><span class="line">    if (!queue) &#123;</span><br><span class="line">      return inst.state;</span><br><span class="line">    &#125;</span><br><span class="line">    if (replace &amp;&amp; queue.length === 1) &#123;</span><br><span class="line">      return queue[0];</span><br><span class="line">    &#125;</span><br><span class="line">    var nextState = _assign(&#123;&#125;, replace ? queue[0] : inst.state);</span><br><span class="line">    for (var i = replace ? 1 : 0; i &lt; queue.length; i++) &#123;</span><br><span class="line">      var partial = queue[i];</span><br><span class="line">      _assign(nextState, typeof partial === &apos;function&apos; ? partial.call(inst, nextState, props, context) : partial);</span><br><span class="line">    &#125;</span><br><span class="line">    return nextState;</span><br><span class="line">  &#125;，</span><br></pre></td></tr></table></figure>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;什么replace啊什么的都可以暂时不用看，主要先看for循环内部做的事情，replace我们暂时认为是false。<br>for循环遍历了<strong>_pendingStateQueue</strong>中所有保存的状态，对于每一个状态进行处理，处理时首先判断保存的是function还是object。若是function，就在inst的上下文中执行该匿名函数，该函数返回一个代表新state的object，然后执行assign将其与原有的state合并；若是object，则直接与state合并。<br><br><br>注意，传入setState的第一个参数如果是function类型，我们可以看到，其第一个参数nextState即表示更新之前的状态；第二个参数props代表更新之后的props，第三个context代表新的上下文环境。之后返回合并后的state。<br><br><br>这里还需要注意一点，这一点很关键，代码中出现了<strong>this._pendingStateQueue = null</strong>这么一段，这也就意味着<strong>dirtyComponents</strong>进入下一次循环时，执行<strong>performUpdateIfNecessary</strong>不会再去更新组件，这就实现了批量更新，即只做一次更新操作，React在更新组件时就是用这种方式做了优化。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;好了，回来看我们的案例，当我们传入函数作为setState的第一个参数时，我们用该函数提供给我们的state参数来访问组件的state。该state在代码中就对应nextState这个值，这个值在每一次for循环执行时都会对其进行合并，因此第二次执行setState，我们在函数中访问的state就是第一次执行setState后已经合并过的值，所以会打印出2。然而直接通过this.state.count来访问，因为在执行对_pendingStateQueue的for循环时，组件的update还未执行完，this.state还未被赋予新的值，其实了解一下updateComponent会发现，this.state的更新会在_processPendingState执行完执行。所以两次setState取到的都是this.state.count最初的值0，这就解释了之前的现象。其实，这也是React为了解决这种前后state依赖但是state又没及时更新的一种方案，因此在使用时大家要根据实际情况来判断该用哪种方式传参。</p>
+<p>接下来我们再来看看setState的第二个参数，回调函数，它是在什么时候执行的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">class Root extends React.Component &#123;</span><br><span class="line">    constructor(props) &#123;</span><br><span class="line">        super(props);</span><br><span class="line">        this.state = &#123;</span><br><span class="line">            count: 0</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    componentDidMount() &#123;</span><br><span class="line">        let me = this;</span><br><span class="line">        setTimeout(function() &#123;</span><br><span class="line">            me.setState(&#123;count: me.state.count + 1&#125;, function() &#123;</span><br><span class="line">                console.log(&apos;did callback&apos;);</span><br><span class="line">            &#125;);</span><br><span class="line">            console.log(&apos;hello&apos;);</span><br><span class="line">        &#125;, 0);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    componentDidUpdate() &#123;</span><br><span class="line">        console.log(&apos;did update&apos;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        return &lt;h1&gt;&#123;this.state.count&#125;&lt;/h1&gt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个案例控制台打印顺序是怎样的呢？<br>不卖关子了，答案是did update，did callback，hello。这里是在一个setTimeout中执行了setState，因此其处于一个单独的事务之中，所以hello最后打印容易理解。然后我们来看看setState执行更新时做了些啥。前面我们知道在执行完组件装载即调用了componentDidMount之后，事务开始执行一系列close方法，这其中包括调用FLUSH_BATCHED_UPDATES中的flushBatchedUpdates，我们来看看这段代码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">var flushBatchedUpdates = function () &#123;</span><br><span class="line">  // ReactUpdatesFlushTransaction&apos;s wrappers will clear the dirtyComponents</span><br><span class="line">  // array and perform any updates enqueued by mount-ready handlers (i.e.,</span><br><span class="line">  // componentDidUpdate) but we need to check here too in order to catch</span><br><span class="line">  // updates enqueued by setState callbacks and asap calls.</span><br><span class="line">  while (dirtyComponents.length || asapEnqueued) &#123;</span><br><span class="line">    if (dirtyComponents.length) &#123;</span><br><span class="line">      var transaction = ReactUpdatesFlushTransaction.getPooled();</span><br><span class="line">      transaction.perform(runBatchedUpdates, null, transaction);    // 处理批量更新</span><br><span class="line">      ReactUpdatesFlushTransaction.release(transaction);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    if (asapEnqueued) &#123;</span><br><span class="line">      asapEnqueued = false;</span><br><span class="line">      var queue = asapCallbackQueue;</span><br><span class="line">      asapCallbackQueue = CallbackQueue.getPooled();</span><br><span class="line">      queue.notifyAll();    // 处理callback</span><br><span class="line">      CallbackQueue.release(queue);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>可以看我做了中文标注的两个地方，这个方法其实主要就是处理了组件的更新和callback的调用。组件的更新发生在runBatchedUpdates这个方法中，下面的queue.notifyAll内部其实就是从队列中去除callback调用，因此应该是先执行完更新，调用componentDidUpdate方法之后，再去执行callback，就有了我们上面的结果。<br><br><br><strong>总结</strong><br>React在组件更新方面做了很多优化，这其中就包括了上述的批量更新。在componentDidMount中执行了N个setState，如果执行N次更新是件很傻的事情。React利用其独特的事务实现，做了这些优化。正是因为这些优化，才造成了上面见到的怪现象。还有一点，再使用this.state时一定要注意组件的生命周期，很多时候在获取state的时候，组件更新还未完成，this.state还未改变，这是很容易造成bug的一个地方，要避免这个问题，需要对组件生命周期有一定的了解。</p>
 
       
     </div>
@@ -411,15 +386,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/09/08/关于React-setState的实现原理（二-md/" rel="next" title="关于React setState的实现原理（二).md">
+                <i class="fa fa-chevron-left"></i> 关于React setState的实现原理（二).md
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/23/archives-git知识点/" rel="prev" title="使用hexo+github搭建个人博客(进阶篇)">
-                使用hexo+github搭建个人博客(进阶篇) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -471,17 +446,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -580,22 +546,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始"><span class="nav-number">1.</span> <span class="nav-text">开始</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装HEXO"><span class="nav-number">1.1.</span> <span class="nav-text">安装HEXO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指定博客文件夹的目录如下："><span class="nav-number">1.2.</span> <span class="nav-text">指定博客文件夹的目录如下：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行："><span class="nav-number">1.3.</span> <span class="nav-text">运行：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载NexT主题"><span class="nav-number">1.4.</span> <span class="nav-text">下载NexT主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NexT主题简单配置"><span class="nav-number">1.5.</span> <span class="nav-text">NexT主题简单配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完成"><span class="nav-number">1.6.</span> <span class="nav-text">完成</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
