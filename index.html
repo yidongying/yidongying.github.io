@@ -263,6 +263,194 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yidongying.github.io/2017/09/05/关于React-setState的实现原理（一-md/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="大鱼吃小鱼@">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="易冬英的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/05/关于React-setState的实现原理（一-md/" itemprop="url">关于React setState的实现原理（一).md</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-05T09:57:48+08:00">
+                2017-09-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/react的概念理解/" itemprop="url" rel="index">
+                    <span itemprop="name">react的概念理解</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/09/05/关于React-setState的实现原理（一-md/" class="leancloud_visitors" data-flag-title="关于React setState的实现原理（一).md">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>首先在学习react的时候就对setSate的实现有比较浓厚的兴趣，那么对于下边的代码，可以快速回答吗？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">class Root extends React.Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    super(props);</span><br><span class="line">    this.state = &#123;</span><br><span class="line">      count: 0</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    let me = this;</span><br><span class="line">    me.setState(&#123;</span><br><span class="line">      count: me.state.count + 1</span><br><span class="line">    &#125;);</span><br><span class="line">    console.log(me.state.count);    // 打印</span><br><span class="line">    me.setState(&#123;</span><br><span class="line">      count: me.state.count + 1</span><br><span class="line">    &#125;);</span><br><span class="line">    console.log(me.state.count);    // 打印</span><br><span class="line">    setTimeout(function()&#123;</span><br><span class="line">     me.setState(&#123;</span><br><span class="line">       count: me.state.count + 1</span><br><span class="line">     &#125;);</span><br><span class="line">     console.log(me.state.count);   // 打印</span><br><span class="line">    &#125;, 0);</span><br><span class="line">    setTimeout(function()&#123;</span><br><span class="line">     me.setState(&#123;</span><br><span class="line">       count: me.state.count + 1</span><br><span class="line">     &#125;);</span><br><span class="line">     console.log(me.state.count);   // 打印</span><br><span class="line">    &#125;, 0);</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;h1&gt;&#123;this.state.count&#125;&lt;/h1&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这段代码大家可能在很多地方看见过，结果是让你匪夷所思的0，0，2，3。 大部分人相信都不知道其中的原因，首先肯定会问：</p>
+<p>为什么前两次为零，而加上setTimeout就可以打印出来？<br>为什么setTimeout打印出不同的结果？<br>那么请你接下来向下看，我首先说一下Batch Updata（批量更新）。如下图：<br><img src="https://img-blog.csdn.net/2018070510045176?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<p><strong>什么是Batch Update ?</strong><br>在一些MV*框架中，就是将一段时间内对model的修改批量更新到view的机制。比如那前端比较火的React、vue为例。</p>
+<p>在React中，我们在componentDidMount生命周期连续调用SetState：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">componentDidMount () &#123;</span><br><span class="line">  this.setState(&#123; foo: 1 &#125;)</span><br><span class="line">  this.setState(&#123; foo: 2 &#125;)</span><br><span class="line">  this.setState(&#123; foo: 3 &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在没有Batch Update的情况下，上面的操作会导致三次组件渲染，但是使用Batch Update机制下时间上只运行了一次渲染。componentDidMount中三次对model的操作被优化为一次view更新，</p>
+<p>不必要的Vitual Dom计算被忽略，从而提高了框架的效率。</p>
+<p><strong>Batch Update的实现</strong><br>我们想到的可能就是数据结构中的栈和队列，比较一下还是使用一个queue来保存update，并在合适的时机对这个queue进行flush操作。那么现在有两个问题：</p>
+<p><strong>什么时候创建这个queue</strong><br><strong>什么时候对这个queue进行flush</strong><br>那么我们要对Reac和Vue的源码进行分析，首先React：React中的Batch Update是通过Transaction（事务）来实现的。在React源码关于Transaction的部分可以用一幅画解释：</p>
+<p><img src="https://img-blog.csdn.net/20180705100619182?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<p> Transaction对一个函数进行包装，让React有机会在一个函数执行前和执行后运行特定的逻辑，从而完成对整个Batch Update流程的控制。</p>
+<p>简单的说就是在要执行的函数中用事务包裹起来，在函数执行前加入initialize阶段，函数执行，最后执行close阶段。那么Batch Update中</p>
+<p>在事件initialize阶段，一个update queue被创建。在事件中调用setState方法时，状态不会被立即调用，而是被push进Update queue中。</p>
+<p>函数执行结束调用事件的close阶段，Update queue会被flush，这事新的状态才会被应用到组件上并开始后续的Virtual DOM更新，biff算法来对</p>
+<p>model更新。</p>
+<p>对比于React，Vue实现Batch update就简单多了：直接借助JS中的Event Loop。（参考阮老师的<a href="http://www.ruanyifeng.com/blog/2013/10/event_loop.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2013/10/event_loop.html</a>）</p>
+<p>Vue中的核心代码就仅仅20多行，如下:</p>
+<p>// <a href="https://github.com/vuejs/vue/blob/dev/src/core/observer/scheduler.js#L122-L148" target="_blank" rel="noopener">https://github.com/vuejs/vue/blob/dev/src/core/observer/scheduler.js#L122-L148</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Push a watcher into the watcher queue.</span><br><span class="line"> * Jobs with duplicate IDs will be skipped unless it&apos;s</span><br><span class="line"> * pushed when the queue is being flushed.</span><br><span class="line"> */</span><br><span class="line">export function queueWatcher (watcher: Watcher) &#123;</span><br><span class="line">  const id = watcher.id</span><br><span class="line">  if (has[id] == null) &#123;</span><br><span class="line">    has[id] = true</span><br><span class="line">    if (!flushing) &#123;</span><br><span class="line">      queue.push(watcher)</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      // if already flushing, splice the watcher based on its id</span><br><span class="line">      // if already past its id, it will be run next immediately.</span><br><span class="line">      let i = queue.length - 1</span><br><span class="line">      while (i &gt; index &amp;&amp; queue[i].id &gt; watcher.id) &#123;</span><br><span class="line">        i--</span><br><span class="line">      &#125;</span><br><span class="line">      queue.splice(i + 1, 0, watcher)</span><br><span class="line">    &#125;</span><br><span class="line">    // queue the flush</span><br><span class="line">    if (!waiting) &#123;</span><br><span class="line">      waiting = true</span><br><span class="line">      nextTick(flushSchedulerQueue)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当model被修改时，对应的watcher会被推入Update queue， 与此同时还会在异步队列中添加一个task用于flush当前的Update queue。</p>
+<p>这样一来，当前的task中的其他watcher会被推进同一个Update queue中。当前task执行结束后，异步队列下一个task执行，update queue</p>
+<p>会被 flush，并进行后续的更新操作。</p>
+<p>为了让 flush 动作能在当前 Task 结束后尽可能早的开始，Vue 会优先尝试将任务 micro-task 队列，具体来说，在浏览器环境中 Vue 会优</p>
+<p>先尝试使用 MutationObserver API 或 Promise，如果两者都不可用，则 fallback 到 setTimeout。</p>
+<p>对比两个框架可以发现 React 基于 Transition 实现的 Batch Query 是一个不依赖语言特性的通用模式，因此有更稳定可控的表现，但缺点</p>
+<p>是无法完全覆盖所有情况，例如对于如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">componentDidMount () &#123;</span><br><span class="line">  setTimeout(_ =&gt; &#123;</span><br><span class="line">    this.setState(&#123; foo: 1 &#125;)</span><br><span class="line">    this.setState(&#123; foo: 2 &#125;)</span><br><span class="line">    this.setState(&#123; foo: 3 &#125;)</span><br><span class="line">  &#125;, 0)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>由于 setTimeout 的回调函数「不受 React 控制」，其中的 setState 就无法得到优化，最终会导致 render 函数执行三次。</p>
+<p>而 Vue 的实现则对语言特性乃至运行环境有很强的依赖，但可以更好的覆盖各种情况：只要是在同一个 task 中的修改都可以进行 Batch Update 优化。</p>
+<p><br><br><br><br><strong>总结一下：</strong><br><br><br> React 在这里的更新和事务机制使用比较通用的处理方式。<br><br><br>比如默认第一次应用初始化的时候是一次事务的进行，在用户交互的时候是一次新的事务开始，会在同一次同步事务中标记 batchUpdate=true，这样的做法是不破坏使用者的代码。<br>然后如果是 Ajax，setTimeout 等要离开主线程进行异步操作的时候会脱离当前 UI 的事务，这时候再进入此次处理的时候 batchUpdate=false，所以才会 setState 几次就 render 几次。<br><br><br>Vue 的策略虽然在机制上雷同，但是从根本上来讲是一种延迟的批量更新机制。<br><br><br>Angular 在这里也处理得很巧妙，利用 zone.js 对 task 进行拦截，对 JS 现有场景进行 AOP，这样就成功的桥接了代码。<br><br><br>React 的事务是纯粹的 IO 模型的适配。<br><br><br> 那么Batch Update介绍到这里 ，在下一篇我们将参考React源码来分析setState的实现过程。<br> <br><br> <strong>参考文档:</strong><br>     饿了么前端团队对于batch Update的理解: <a href="https://zhuanlan.zhihu.com/p/28532725" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/28532725</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+  <div>
+      
+  </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://yidongying.github.io/2017/03/25/记录博客搭建踩过的坑/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -902,7 +1090,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -913,7 +1101,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
