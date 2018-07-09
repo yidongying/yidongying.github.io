@@ -2,6 +2,7 @@
 title: 关于React setState的实现原理（三).md
 date: 2017-09-10 10:30:51
 tags:
+categories: react的概念理解
 ---
 [上一篇文章中](https://yidongying.github.io/2017/09/08/%E5%85%B3%E4%BA%8EReact-setState%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%EF%BC%88%E4%BA%8C-md/)提到事务即将结束时，会去调用FLUSH_BATCHED_UPDATES的flushBatchedUpdates方法执行批量更新，该方法会去遍历dirtyComponents，对每一项执行performUpdateIfNecessary方法，该方法代码如下：
 
