@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="categories:javascript进阶之路," />
 
 
 
@@ -79,24 +79,18 @@
 
 
 
-<meta name="description" content="本人的博客使用的是hexo+github搭建的一套独立博客, 主题采用的是next,经过两天的折腾, 博客也弄得有模有样了.(微笑).现在记录一下踩过的坑,希望自己可以好好总结, 能帮助到萌新就更好了,哈哈!问题不分顺序,本人比较懒, 想到啥就写啥. 1.解决编辑器的问题  hexo是使用markdown编辑器的,如果不想在本地安装markDown,(我就懒得安装), 那么CSDN了解一下.  在">
-<meta name="keywords" content="小鱼 前端 程序媛 码农 工程师">
+<meta name="description" content="说明： 本文提到的浏览器均是指Chrome。“script标签“指的都是普通的不带其他属性的外联javascript。web性能优化的手段并不是非黑即白的，有些手段过头了反而降低性能，所以在讨论条件和结论的时候，虽然很多条件本身会带来其他细微的负面或正面影响，为了不使论述失去重点，不会扩展太开。一、从一个面试题说起面试前端的时候我喜欢问一些看上去是常识的问题。比如：为什么大家普遍把这样的代码放在b">
+<meta name="keywords" content="categories:javascript进阶之路">
 <meta property="og:type" content="article">
-<meta property="og:title" content="记录博客搭建踩过的坑">
-<meta property="og:url" content="https://yidongying.github.io/2017/03/25/记录博客搭建踩过的坑/index.html">
+<meta property="og:title" content="为什么要将script脚本放在body底部">
+<meta property="og:url" content="https://yidongying.github.io/2017/07/08/为什么要将script脚本放在body底部/index.html">
 <meta property="og:site_name" content="易冬英的博客">
-<meta property="og:description" content="本人的博客使用的是hexo+github搭建的一套独立博客, 主题采用的是next,经过两天的折腾, 博客也弄得有模有样了.(微笑).现在记录一下踩过的坑,希望自己可以好好总结, 能帮助到萌新就更好了,哈哈!问题不分顺序,本人比较懒, 想到啥就写啥. 1.解决编辑器的问题  hexo是使用markdown编辑器的,如果不想在本地安装markDown,(我就懒得安装), 那么CSDN了解一下.  在">
+<meta property="og:description" content="说明： 本文提到的浏览器均是指Chrome。“script标签“指的都是普通的不带其他属性的外联javascript。web性能优化的手段并不是非黑即白的，有些手段过头了反而降低性能，所以在讨论条件和结论的时候，虽然很多条件本身会带来其他细微的负面或正面影响，为了不使论述失去重点，不会扩展太开。一、从一个面试题说起面试前端的时候我喜欢问一些看上去是常识的问题。比如：为什么大家普遍把这样的代码放在b">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://img-blog.csdn.net/20180704164154206?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180704153412384?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180704161327622?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/2018070416323750?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/2018070416543571?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2018-07-05T03:27:42.399Z">
+<meta property="og:updated_time" content="2018-07-19T07:04:07.425Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="记录博客搭建踩过的坑">
-<meta name="twitter:description" content="本人的博客使用的是hexo+github搭建的一套独立博客, 主题采用的是next,经过两天的折腾, 博客也弄得有模有样了.(微笑).现在记录一下踩过的坑,希望自己可以好好总结, 能帮助到萌新就更好了,哈哈!问题不分顺序,本人比较懒, 想到啥就写啥. 1.解决编辑器的问题  hexo是使用markdown编辑器的,如果不想在本地安装markDown,(我就懒得安装), 那么CSDN了解一下.  在">
-<meta name="twitter:image" content="https://img-blog.csdn.net/20180704164154206?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta name="twitter:title" content="为什么要将script脚本放在body底部">
+<meta name="twitter:description" content="说明： 本文提到的浏览器均是指Chrome。“script标签“指的都是普通的不带其他属性的外联javascript。web性能优化的手段并不是非黑即白的，有些手段过头了反而降低性能，所以在讨论条件和结论的时候，虽然很多条件本身会带来其他细微的负面或正面影响，为了不使论述失去重点，不会扩展太开。一、从一个面试题说起面试前端的时候我喜欢问一些看上去是常识的问题。比如：为什么大家普遍把这样的代码放在b">
 
 
 
@@ -126,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://yidongying.github.io/2017/03/25/记录博客搭建踩过的坑/"/>
+  <link rel="canonical" href="https://yidongying.github.io/2017/07/08/为什么要将script脚本放在body底部/"/>
 
 
 
 
 
-  <title>记录博客搭建踩过的坑 | 易冬英的博客</title>
+  <title>为什么要将script脚本放在body底部 | 易冬英的博客</title>
   
 
 
@@ -269,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yidongying.github.io/2017/03/25/记录博客搭建踩过的坑/">
+    <link itemprop="mainEntityOfPage" href="https://yidongying.github.io/2017/07/08/为什么要将script脚本放在body底部/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="大鱼吃小鱼@">
@@ -286,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">记录博客搭建踩过的坑</h1>
+          <h1 class="post-title" itemprop="name headline">为什么要将script脚本放在body底部</h1>
         
 
         <div class="post-meta">
@@ -298,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-25T14:47:58+08:00">
-                2017-03-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-08T15:01:50+08:00">
+                2017-07-08
               </time>
             
 
@@ -309,28 +303,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/博客搭建/" itemprop="url" rel="index">
-                    <span itemprop="name">博客搭建</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -338,7 +310,7 @@
 
           
           
-             <span id="/2017/03/25/记录博客搭建踩过的坑/" class="leancloud_visitors" data-flag-title="记录博客搭建踩过的坑">
+             <span id="/2017/07/08/为什么要将script脚本放在body底部/" class="leancloud_visitors" data-flag-title="为什么要将script脚本放在body底部">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -369,40 +341,51 @@
       
 
       
-        <p>本人的博客使用的是hexo+github搭建的一套独立博客, 主题采用的是next,经过两天的折腾, 博客也弄得有模有样了.(微笑).<br>现在记录一下踩过的坑,希望自己可以好好总结, 能帮助到萌新就更好了,哈哈!<br>问题不分顺序,本人比较懒, 想到啥就写啥.</p>
-<p><strong>1.解决编辑器的问题</strong><br>  hexo是使用markdown编辑器的,如果不想在本地安装markDown,(我就懒得安装), 那么CSDN了解一下.<br>  在CSDN写文章的编辑器中 , 切换成markDown, 编辑完之后选择导出到本地, 然后将这个文件放置到你的相应文件夹下, 搞定 .</p>
-<p><strong>2.给hexo博客添加系列文章功能</strong><br>之前已经讲过, hexo new page categories 便可以新建一个categories页面,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2018-03-02 12:33:16</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
-<p>实际上调用hexo new page xxx后，会在/source/categories/目录下生成一个index.md文档，在此文档头部加上上面这段即可。实际上，index.md里只需要有这个声明即可，其他内容并不会显示出来，写了也没用。<br>(1)新建文章<br>hexo new ‘文章名’<br>(2)设置分类<br>这一步是重点了, 在上一步中,我们可以看到已经创建了一个 ‘文章名.md’的文件,在source/_posts文件夹下可以找到.<br>大概长这样:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title:  记录博客搭建踩过的坑</span><br><span class="line">date: 2017-03-25 14:47:58</span><br><span class="line">tags:</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
-<p>你只需要在tags标签下添加分类名称就可以了,像这样:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tags:</span><br><span class="line">categories: 博客搭建</span><br></pre></td></tr></table></figure>
-<p>PS. 无论是page，还是post的文章，都是以.md格式结尾，在hexo g的过程中会产生对应的.html文档，然后hexo d到Github上的也只是html文档，不是.md格式的文档。<br>另外就是，需要注意一点：如果有启用多说 或者 Disqus 评论，默认页面也会带有评论。需要关闭的话，请添加字段 comments 并将值设置为 false，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2018-03-02 12:33:16</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
-<p><strong>3.HEXO 出现 &gt; -bash: hexo: command not found</strong></p>
-<p>在执行hexo deploy的时候一直出现ERROR Deployer not found: git。<br>_config.yml是配置文件,见下图：hexo在2点几的版本中type: github。之后的版本是type: git<br><img src="https://img-blog.csdn.net/20180704164154206?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br>解决方法:</p>
+        <p><strong>说明：</strong></p>
+<p>本文提到的浏览器均是指Chrome。<br>“script标签“指的都是普通的不带其他属性的外联javascript。<br>web性能优化的手段并不是非黑即白的，有些手段过头了反而降低性能，所以在讨论条件和结论的时候，虽然很多条件本身会带来其他细微的负面或正面影响，为了不使论述失去重点，不会扩展太开。<br>一、从一个面试题说起<br>面试前端的时候我喜欢问一些看上去是常识的问题。比如：为什么大家普遍把<script src=""></script>这样的代码放在body最底部？（为了沟通效率，我会提前和对方约定所有的讨论都以chrome为例）</p>
+<p>应聘者一般会回答：因为浏览器生成Dom树的时候是一行一行读HTML代码的，script标签放在最后面就不会影响前面的页面的渲染。</p>
+<p>我很鸡贼地接着问：既然Dom树完全生成好后页面才能渲染出来，浏览器又必须读完全部HTML才能生成完整的Dom树，script标签不放在body底部是不是也一样？</p>
+<p>留<br>一<br>段<br>空<br>白<br>让<br>你<br>先<br>想<br>一<br>想</p>
+<p>这其实是个开放性的问题，里面涉及的概念的界定本身就很重要。</p>
+<p>“页面渲染出来了” 指的是什么？<br>严格来说，我的最后一问是有歧义的：我们需要统一一下什么叫我们经常挂在嘴边的“页面渲染出来了” —— 指的是是 “首屏显示出来了” 还是 “页面完整地加载好了”（后面统称StepC） ？<br>如果指的是首屏显示出来了，那么问题又来了：假设网页首屏有图片，这里的“首屏” 指的是 “显示了全部图片的首屏”（后面统称StepB） 还是 “没有图片的首屏”（后面统称StepA）。</p>
+<p>确定清楚 “页面渲染出来了” 指的是 StepA、StepB、StepC 中的哪一个是非常关键的（虽然至今还没有一个应聘者尝试这么做过），如果 “页面渲染出来了” 指的是 StepC，那么我的最后一问的答案是肯定的——script标签不放在body底部不会拖慢页面完整地加载好的时间。</p>
+<p>显然，我们往往更关心首屏时间，所以，如果 “页面渲染出来了” 特指“没有图片的首屏”，那我的最后一问变成了下面这样，又该如何回答呢？</p>
+<p>既然Dom树完全生成好后才能显示“没有图片的首屏”，浏览器又必须读完全部HTML才能生成完整的Dom树，script标签不放在body底部是不是也一样？</p>
+<p>陷阱<br>然而上面的问题还是存在一个陷阱——既然Dom树完全生成好后才能显示“没有图片的首屏”这句话是带欺骗性的，“没有图片的首屏”并不以“完整的Dom树”为必要条件。也就是说：在生成Dom树的过程中只要某些条件具备了，“没有图片的首屏”就能显示出来。</p>
+<p>所以，抛开这些歧义和陷阱，我的问题变成了：</p>
+<p>script标签的位置会影响首屏时间么？</p>
+<p>然而答案并不是那么显而易见，这得从浏览器的渲染机制说起。（再一次说明：本文所说的浏览器都是指chrome）</p>
+<p>二、浏览器的渲染机制<br>Google Web Fundamentals 是一个非常优秀的文档，里面讲到了跟web、浏览器、前端的方方面面。我总结一下其中的 Ilya Grigorik 写的 Critical rendering path 浏览器渲染机制部分的内容如下：</p>
+<p>几个概念</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1、DOM：Document Object Model，浏览器将HTML解析成树形的数据结构，简称DOM。</span><br><span class="line"></span><br><span class="line">2、CSSOM：CSS Object Model，浏览器将CSS代码解析成树形的数据结构。</span><br><span class="line"></span><br><span class="line">3、DOM 和 CSSOM 都是以 Bytes → characters → tokens → nodes → object model. 这样的方式生成最终的数据。如下图所示：</span><br><span class="line"></span><br><span class="line">bVsaO</span><br><span class="line"></span><br><span class="line">DOM 树的构建过程是一个深度遍历过程：当前节点的所有子节点都构建好后才会去构建当前节点的下一个兄弟节点。</span><br><span class="line"></span><br><span class="line">4、Render Tree：DOM 和 CSSOM 合并后生成 Render Tree，如下图：</span><br></pre></td></tr></table></figure>
+<p>bVsaP</p>
+<p>Render Tree 和DOM一样，以多叉树的形式保存了每个节点的css属性、节点本身属性、以及节点的孩子节点。</p>
+<p>注意：display:none 的节点不会被加入 Render Tree，而 visibility: hidden 则会，所以，如果某个节点最开始是不显示的，设为 display:none 是更优的。（具体可以看这里）</p>
+<p>浏览器的渲染过程<br>Create/Update DOM And request css/image/js：浏览器请求到HTML代码后，在生成DOM的最开始阶段（应该是 Bytes → characters 后），并行发起css、图片、js的请求，无论他们是否在HEAD里。</p>
 <blockquote>
-<p>npm install hexo-deployer-git –save<br>hexo d -g</p>
+<p>注意：发起 js 文件的下载 request 并不需要 DOM 处理到那个 script<br>节点，比如：简单的正则匹配就能做到这一点，虽然实际上并不一定是通过正则：）。这是很多人在理解渲染机制的时候存在的误区。</p>
 </blockquote>
-<p><strong>4.将博客部署到github pages出问题</strong></p>
-<p>最常见的就是两个问题, (1)ssh Key的问题, (2) github上setting的问题<br>如何部署就不说了, 这里贴上两篇教程 ,<a href="https://blog.csdn.net/u011974987/article/details/51331822/" target="_blank" rel="noopener">https://blog.csdn.net/u011974987/article/details/51331822/</a><br><a href="https://www.cnblogs.com/imapla/p/5533000.html" target="_blank" rel="noopener">https://www.cnblogs.com/imapla/p/5533000.html</a></p>
-<p>(1)ssh Key的问题<br><img src="https://img-blog.csdn.net/20180704153412384?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br>照着<a href="https://www.jianshu.com/p/301afa16f471" target="_blank" rel="noopener">这篇教程,</a> 重新生成一个sshKey, 并将公钥放置到你的仓库中.</p>
-<p>(2)setting的问题</p>
-<p>这里需要说明的是, github需要设置pages的仓库名称, 必须是以io结尾的., 这个命名也是个坑, 格式必须是youname.github.io这种。其次youname必须是你的github的用户名.<br>在仓库的setting的options中,找到GitHub Pages模块,在source中选择分支,并点击保存,再刷新页面就会看到有一个网址, 类似这样:<br><img src="https://img-blog.csdn.net/20180704161327622?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<p>如果是需要在README.md中查看到博客网址的话,可以在README.md中使用一个a标签,href链接地址就是这个红色框的地址. 如果是其他仓库,则需要加上index.html索引文件 .<br>如果没有出现上面所说的网址,打开链接的错误地址,如果是遇到下面这个问题 :<br><img src="https://img-blog.csdn.net/2018070416323750?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br>很明显,是部署失败了, 那么就重新部署吧.<br>部署之前一定要安装这个包</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git –save</span><br></pre></td></tr></table></figure>
-<p>然后执行 hexo d -g</p>
-<p>5.空格问题<br>需要注意的是,在_config.yml配置文件中,属性名和属性值之间一定要有一个空格<br>不然你会遇到类似下面这种问题:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">错误提示：FATAL bad indentation of a mapping entry at line 72, column 7:</span><br></pre></td></tr></table></figure></p>
-<p>或者这种问题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">错误提示：</span><br><span class="line">You should configure deployment settings in _config.yml first!</span><br><span class="line">Available deployer plugins:</span><br><span class="line">  git</span><br><span class="line">For more help, you can check the online docs: http://hexo.io/</span><br></pre></td></tr></table></figure>
-<p>6.404可能原因<br>(1).域名解析错误。</p>
-<p>检查： windows下cmd命令符输入ping cheatlys.info（你的域名） 看一下ip地址，在ping一下你github上的，ping liuyongshun.github.io看一下是否一样，并且没有请求超时。</p>
-<p>(2).你的域名是通过国内注册商注册的，因没有实名制而无法访问。</p>
-<p>(3).浏览器缓存，路由器缓存。可尝试清除浏览器缓存再访问或者换个浏览器访问，或者换个局域网访问。</p>
-<p>(4). 你的hexo配置有问题，而导致index页面在主域名的下一级目录。找到index页面，在域名后面添加下一级目录。看是否能访问index页面（此时样式可能是乱的）。直接在.github.io的库（相当于根目录，在_config.yml配置root时直接是/如果这些内容在blog下，root应该是/blog/）下边展开这些内容。<br><img src="https://img-blog.csdn.net/2018070416543571?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<p>7.绑定域名<br>你需要在本地的source下建立CNAME文件(是文件不是文件夹也没有拓展名)，内容就是你买的的域名（例：不要<a href="http://www.cheatlys.info，而是写cheatlys.info前者直接输入cheatlys.info不会连接到你的网站。）" target="_blank" rel="noopener">www.cheatlys.info，而是写cheatlys.info前者直接输入cheatlys.info不会连接到你的网站。）</a></p>
-<p>暂时先写到这里啦,后面想起来再写,</p>
-<p><strong>补充日常博客管理</strong><br><strong>日常修改</strong><br>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理：</p>
-<p>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；<br>然后才执行hexo generate -d发布网站到master分支上。<br>虽然两个过程顺序调转一般不会有问题，不过逻辑上这样的顺序是绝对没问题的（例如突然死机要重装了，悲催….的情况，调转顺序就有问题了）。</p>
-<p><strong>本地资料丢失</strong><br>当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：</p>
-<p>使用git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:CrazyMilk/CrazyMilk.github.io.git拷贝仓库（默认分支为hexo）；<br>在本地新拷贝的CrazyMilk.github.io文件夹下通过Git bash依次执行下列指令：npm install hexo、npm install、npm install hexo-deployer-git（记得，不需要hexo init这条指令）。</p>
+<p>Create/Update Render CSSOM：CSS文件下载完成，开始构建CSSOM<br>Create/Update Render Tree：所有CSS文件下载完成，CSSOM构建结束后，和 DOM 一起生成 Render Tree。<br>Layout：有了Render Tree，浏览器已经能知道网页中有哪些节点、各个节点的CSS定义以及他们的从属关系。<br>下一步操作称之为Layout，顾名思义就是计算出每个节点在屏幕中的位置。<br>Painting：Layout后，浏览器已经知道了哪些节点要显示（which nodes are visible）、每个节点的CSS属性是什么（their computed styles）、每个节点在屏幕中的位置是哪里（geometry）。就进入了最后一步：Painting，按照算出来的规则，通过显卡，把内容画到屏幕上。<br>以上五个步骤前3个步骤之所有使用 “Create/Update” 是因为DOM、CSSOM、Render Tree都可能在第一次Painting后又被更新多次，比如JS修改了DOM或者CSS属性。</p>
+<p>Layout 和 Painting 也会被重复执行，除了DOM、CSSOM更新的原因外，图片下载完成后也需要调用Layout 和 Painting来更新网页。</p>
+<p>看 Timeline，一目了然<br>我扒了一段有赞PC首页的代码到本地，通过Node跑起来。Node作为Server端，对/js/jquery.js 做了延时2s返回的处理，并且把<script src="http://127.0.0.1:8080/js/jquery.js"></script> 放到导航栏的下面，结果是这样的：</p>
+<p>bVsaO</p>
+<p>bVsaO</p>
+<p>bVsaO</p>
+<p>bVsaO</p>
+<p>从上面的Timeline我们可以看出：</p>
+<p>首屏时间和DomContentLoad事件没有必然的先后关系<br>所有CSS尽早加载是减少首屏时间的最关键<br>js的下载和执行会阻塞Dom树的构建（严谨地说是中断了Dom树的更新），所以script标签放在首屏范围内的HTML代码段里会截断首屏的内容。<br>script标签放在body底部，做与不做async或者defer处理，都不会影响首屏时间，但影响DomContentLoad和load的时间，进而影响依赖他们的代码的执行的开始时间。<br>三、问题的答案<br>回到前面的问题：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">script标签的位置会影响首屏时间么？</span><br></pre></td></tr></table></figure>
+<p>答案是：不影响（如果这里里的首屏指的是页面从白板变成网页画面——也就是第一次Painting），但有可能截断首屏的内容，使其只显示上面一部分。</p>
+<p>为什么说是“有可能”呢？，如果该js下载地比css还快，或者script标签不在第一屏的html里，实际上是不影响的。明白这一影响边界非常重要，这样我们在考察页面性能瓶颈的时候就有的放矢了。举个例子：在网页的第二屏有一个通用模块，实际上我们是可以把它的js逻辑独立成一个文件，将模块的html和js标签放在一起做成独立的模板引进来的（如果它的js比较小或者说因为多了一个文件会多占用一个TCP连接和带宽，这实际上是另外一个话题了，请参考我文章开头的声明）。</p>
+<p>四、总结、再进一步<br>所以，总算弄清楚这个众所周知的常识了。我们来总结一下：</p>
+<blockquote>
+<p>如果script标签的位置不在首屏范围内，不影响首屏时间 所有的script标签应该放在body底部是很有道理的<br>但从性能最优的角度考虑，即使在body底部的script标签也会拖慢首屏出来的速度，<br>因为浏览器在最一开始就会请求它对应的js文件，而这，占用了有限的TCP链接数、带宽甚至运行它所需要的CPU。<br>这也是为什么script标签会有async或defer属性的原因之一。</p>
+</blockquote>
+<p>可是，在复杂的实际应用场景中，要贯彻这几条结论可能会遇到问题，比如：</p>
+<p>你的页面是分模块来写的，每一个模块都有自己的html、js甚至css，当把这些模块凑到一个页面中的时候就会出现js自然而然地出现在HTML中间部分。你很难把script标签都放到底部<br>即使你把script标签都放到底部，但script标签的存在终究是拖慢了首屏时间、DomContendLoad和loaded的时间。如果只有一个script标签，我们可以加一个async，但多个async的script标签的结果会是js文件被乱序执行的，这显然不是我们想要的。<br>我们也遇到了这样的问题，所以就做了一个开源项目：Tiny-Loader —— A small loader that load CSS/JS in best way for page performance 简单好用。</p>
+<p>来自：<a href="https://blog.csdn.net/garvisjack/article/details/71077986#t1" target="_blank" rel="noopener">https://blog.csdn.net/garvisjack/article/details/71077986#t1</a></p>
+<p>相关文章<br><a href="http://caibaojian.com/toutiao/6171" target="_blank" rel="noopener">聊聊前端排序的那些事</a> 601Views</p>
+<p><a href="http://caibaojian.com/toutiao/6547" target="_blank" rel="noopener">浏览器的布局绘制与DOM操作</a>  214Views<br><a href="http://caibaojian.com/toutiao/5111" target="_blank" rel="noopener">小技巧：一行代码让浏览器瞬间变成临时编辑器</a> 761Views<br><a href="http://caibaojian.com/toutiao/6648" target="_blank" rel="noopener">浅析渲染引擎与前端优化</a> 245Views<br><a href="https://blog.csdn.net/lumeier/article/details/46398009" target="_blank" rel="noopener">JS放在head和放在body中的区别</a>   286Views</p>
 
       
     </div>
@@ -427,6 +410,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/categories-javascript进阶之路/" rel="tag"># categories:javascript进阶之路</a>
+          
+        </div>
+      
 
       
       
@@ -436,8 +425,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/23/archives-git知识点/" rel="next" title="使用hexo+github搭建个人博客(进阶篇)">
-                <i class="fa fa-chevron-left"></i> 使用hexo+github搭建个人博客(进阶篇)
+              <a href="/2017/03/25/记录博客搭建踩过的坑/" rel="next" title="记录博客搭建踩过的坑">
+                <i class="fa fa-chevron-left"></i> 记录博客搭建踩过的坑
               </a>
             
           </div>
@@ -446,8 +435,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/08/为什么要将script脚本放在body底部/" rel="prev" title="为什么要将script脚本放在body底部">
-                为什么要将script脚本放在body底部 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/15/js-将图片资源转码成base64的各种场景及其实现/" rel="prev" title="js 将图片资源转码成base64的各种场景及其实现">
+                js 将图片资源转码成base64的各种场景及其实现 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

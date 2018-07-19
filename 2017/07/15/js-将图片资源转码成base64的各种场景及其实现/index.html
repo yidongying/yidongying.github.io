@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="[object Object]," />
 
 
 
@@ -79,24 +79,18 @@
 
 
 
-<meta name="description" content="本人的博客使用的是hexo+github搭建的一套独立博客, 主题采用的是next,经过两天的折腾, 博客也弄得有模有样了.(微笑).现在记录一下踩过的坑,希望自己可以好好总结, 能帮助到萌新就更好了,哈哈!问题不分顺序,本人比较懒, 想到啥就写啥. 1.解决编辑器的问题  hexo是使用markdown编辑器的,如果不想在本地安装markDown,(我就懒得安装), 那么CSDN了解一下.  在">
-<meta name="keywords" content="小鱼 前端 程序媛 码农 工程师">
+<meta name="description" content="前言:在项目中,经常会遇到要转码转成base64的场景, 那么什么是base64呢? 为什么要转成base64编码呢? 在阮一峰大神的JavaScript文档中是这么说的:   有时，文本里面包含一些不可打印的符号，比如 ASCII 码0到31的符号都无法打印出来，这时可以使用 Base64编码，将它们转成可以打印的字符。另一个场景是，有时需要以文本格式传递二进制数据，那么也可以使用 Base64">
+<meta name="keywords" content="[object Object]">
 <meta property="og:type" content="article">
-<meta property="og:title" content="记录博客搭建踩过的坑">
-<meta property="og:url" content="https://yidongying.github.io/2017/03/25/记录博客搭建踩过的坑/index.html">
+<meta property="og:title" content="js 将图片资源转码成base64的各种场景及其实现">
+<meta property="og:url" content="https://yidongying.github.io/2017/07/15/js-将图片资源转码成base64的各种场景及其实现/index.html">
 <meta property="og:site_name" content="易冬英的博客">
-<meta property="og:description" content="本人的博客使用的是hexo+github搭建的一套独立博客, 主题采用的是next,经过两天的折腾, 博客也弄得有模有样了.(微笑).现在记录一下踩过的坑,希望自己可以好好总结, 能帮助到萌新就更好了,哈哈!问题不分顺序,本人比较懒, 想到啥就写啥. 1.解决编辑器的问题  hexo是使用markdown编辑器的,如果不想在本地安装markDown,(我就懒得安装), 那么CSDN了解一下.  在">
+<meta property="og:description" content="前言:在项目中,经常会遇到要转码转成base64的场景, 那么什么是base64呢? 为什么要转成base64编码呢? 在阮一峰大神的JavaScript文档中是这么说的:   有时，文本里面包含一些不可打印的符号，比如 ASCII 码0到31的符号都无法打印出来，这时可以使用 Base64编码，将它们转成可以打印的字符。另一个场景是，有时需要以文本格式传递二进制数据，那么也可以使用 Base64">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://img-blog.csdn.net/20180704164154206?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180704153412384?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180704161327622?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/2018070416323750?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/2018070416543571?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2018-07-05T03:27:42.399Z">
+<meta property="og:updated_time" content="2018-07-19T07:05:55.232Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="记录博客搭建踩过的坑">
-<meta name="twitter:description" content="本人的博客使用的是hexo+github搭建的一套独立博客, 主题采用的是next,经过两天的折腾, 博客也弄得有模有样了.(微笑).现在记录一下踩过的坑,希望自己可以好好总结, 能帮助到萌新就更好了,哈哈!问题不分顺序,本人比较懒, 想到啥就写啥. 1.解决编辑器的问题  hexo是使用markdown编辑器的,如果不想在本地安装markDown,(我就懒得安装), 那么CSDN了解一下.  在">
-<meta name="twitter:image" content="https://img-blog.csdn.net/20180704164154206?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta name="twitter:title" content="js 将图片资源转码成base64的各种场景及其实现">
+<meta name="twitter:description" content="前言:在项目中,经常会遇到要转码转成base64的场景, 那么什么是base64呢? 为什么要转成base64编码呢? 在阮一峰大神的JavaScript文档中是这么说的:   有时，文本里面包含一些不可打印的符号，比如 ASCII 码0到31的符号都无法打印出来，这时可以使用 Base64编码，将它们转成可以打印的字符。另一个场景是，有时需要以文本格式传递二进制数据，那么也可以使用 Base64">
 
 
 
@@ -126,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://yidongying.github.io/2017/03/25/记录博客搭建踩过的坑/"/>
+  <link rel="canonical" href="https://yidongying.github.io/2017/07/15/js-将图片资源转码成base64的各种场景及其实现/"/>
 
 
 
 
 
-  <title>记录博客搭建踩过的坑 | 易冬英的博客</title>
+  <title>js 将图片资源转码成base64的各种场景及其实现 | 易冬英的博客</title>
   
 
 
@@ -269,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yidongying.github.io/2017/03/25/记录博客搭建踩过的坑/">
+    <link itemprop="mainEntityOfPage" href="https://yidongying.github.io/2017/07/15/js-将图片资源转码成base64的各种场景及其实现/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="大鱼吃小鱼@">
@@ -286,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">记录博客搭建踩过的坑</h1>
+          <h1 class="post-title" itemprop="name headline">js 将图片资源转码成base64的各种场景及其实现</h1>
         
 
         <div class="post-meta">
@@ -298,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-25T14:47:58+08:00">
-                2017-03-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-15T14:55:03+08:00">
+                2017-07-15
               </time>
             
 
@@ -309,28 +303,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/博客搭建/" itemprop="url" rel="index">
-                    <span itemprop="name">博客搭建</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -338,7 +310,7 @@
 
           
           
-             <span id="/2017/03/25/记录博客搭建踩过的坑/" class="leancloud_visitors" data-flag-title="记录博客搭建踩过的坑">
+             <span id="/2017/07/15/js-将图片资源转码成base64的各种场景及其实现/" class="leancloud_visitors" data-flag-title="js 将图片资源转码成base64的各种场景及其实现">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -369,40 +341,28 @@
       
 
       
-        <p>本人的博客使用的是hexo+github搭建的一套独立博客, 主题采用的是next,经过两天的折腾, 博客也弄得有模有样了.(微笑).<br>现在记录一下踩过的坑,希望自己可以好好总结, 能帮助到萌新就更好了,哈哈!<br>问题不分顺序,本人比较懒, 想到啥就写啥.</p>
-<p><strong>1.解决编辑器的问题</strong><br>  hexo是使用markdown编辑器的,如果不想在本地安装markDown,(我就懒得安装), 那么CSDN了解一下.<br>  在CSDN写文章的编辑器中 , 切换成markDown, 编辑完之后选择导出到本地, 然后将这个文件放置到你的相应文件夹下, 搞定 .</p>
-<p><strong>2.给hexo博客添加系列文章功能</strong><br>之前已经讲过, hexo new page categories 便可以新建一个categories页面,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2018-03-02 12:33:16</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
-<p>实际上调用hexo new page xxx后，会在/source/categories/目录下生成一个index.md文档，在此文档头部加上上面这段即可。实际上，index.md里只需要有这个声明即可，其他内容并不会显示出来，写了也没用。<br>(1)新建文章<br>hexo new ‘文章名’<br>(2)设置分类<br>这一步是重点了, 在上一步中,我们可以看到已经创建了一个 ‘文章名.md’的文件,在source/_posts文件夹下可以找到.<br>大概长这样:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title:  记录博客搭建踩过的坑</span><br><span class="line">date: 2017-03-25 14:47:58</span><br><span class="line">tags:</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
-<p>你只需要在tags标签下添加分类名称就可以了,像这样:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tags:</span><br><span class="line">categories: 博客搭建</span><br></pre></td></tr></table></figure>
-<p>PS. 无论是page，还是post的文章，都是以.md格式结尾，在hexo g的过程中会产生对应的.html文档，然后hexo d到Github上的也只是html文档，不是.md格式的文档。<br>另外就是，需要注意一点：如果有启用多说 或者 Disqus 评论，默认页面也会带有评论。需要关闭的话，请添加字段 comments 并将值设置为 false，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2018-03-02 12:33:16</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
-<p><strong>3.HEXO 出现 &gt; -bash: hexo: command not found</strong></p>
-<p>在执行hexo deploy的时候一直出现ERROR Deployer not found: git。<br>_config.yml是配置文件,见下图：hexo在2点几的版本中type: github。之后的版本是type: git<br><img src="https://img-blog.csdn.net/20180704164154206?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br>解决方法:</p>
+        <p><strong>前言:</strong><br>在项目中,经常会遇到要转码转成base64的场景, 那么什么是base64呢? 为什么要转成base64编码呢?</p>
+<p>在<a href="http://javascript.ruanyifeng.com/grammar/string.html#toc6" target="_blank" rel="noopener">阮一峰大神的JavaScript文档</a>中是这么说的:</p>
 <blockquote>
-<p>npm install hexo-deployer-git –save<br>hexo d -g</p>
+<p> 有时，文本里面包含一些不可打印的符号，比如 ASCII 码0到31的符号都无法打印出来，这时可以使用 Base64<br>编码，将它们转成可以打印的字符。<br>另一个场景是，有时需要以文本格式传递二进制数据，那么也可以使用 Base64 编码。<br><br><br>所谓 Base64 就是一种编码方法，可以将任意值转成0～9、A～Z、a-z、+和/这64个字符组成的可打印字符。<br>使用它的主要目的，不是为了加密，而是为了不出现特殊字符，简化程序的处理。</p>
 </blockquote>
-<p><strong>4.将博客部署到github pages出问题</strong></p>
-<p>最常见的就是两个问题, (1)ssh Key的问题, (2) github上setting的问题<br>如何部署就不说了, 这里贴上两篇教程 ,<a href="https://blog.csdn.net/u011974987/article/details/51331822/" target="_blank" rel="noopener">https://blog.csdn.net/u011974987/article/details/51331822/</a><br><a href="https://www.cnblogs.com/imapla/p/5533000.html" target="_blank" rel="noopener">https://www.cnblogs.com/imapla/p/5533000.html</a></p>
-<p>(1)ssh Key的问题<br><img src="https://img-blog.csdn.net/20180704153412384?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br>照着<a href="https://www.jianshu.com/p/301afa16f471" target="_blank" rel="noopener">这篇教程,</a> 重新生成一个sshKey, 并将公钥放置到你的仓库中.</p>
-<p>(2)setting的问题</p>
-<p>这里需要说明的是, github需要设置pages的仓库名称, 必须是以io结尾的., 这个命名也是个坑, 格式必须是youname.github.io这种。其次youname必须是你的github的用户名.<br>在仓库的setting的options中,找到GitHub Pages模块,在source中选择分支,并点击保存,再刷新页面就会看到有一个网址, 类似这样:<br><img src="https://img-blog.csdn.net/20180704161327622?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<p>如果是需要在README.md中查看到博客网址的话,可以在README.md中使用一个a标签,href链接地址就是这个红色框的地址. 如果是其他仓库,则需要加上index.html索引文件 .<br>如果没有出现上面所说的网址,打开链接的错误地址,如果是遇到下面这个问题 :<br><img src="https://img-blog.csdn.net/2018070416323750?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br>很明显,是部署失败了, 那么就重新部署吧.<br>部署之前一定要安装这个包</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git –save</span><br></pre></td></tr></table></figure>
-<p>然后执行 hexo d -g</p>
-<p>5.空格问题<br>需要注意的是,在_config.yml配置文件中,属性名和属性值之间一定要有一个空格<br>不然你会遇到类似下面这种问题:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">错误提示：FATAL bad indentation of a mapping entry at line 72, column 7:</span><br></pre></td></tr></table></figure></p>
-<p>或者这种问题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">错误提示：</span><br><span class="line">You should configure deployment settings in _config.yml first!</span><br><span class="line">Available deployer plugins:</span><br><span class="line">  git</span><br><span class="line">For more help, you can check the online docs: http://hexo.io/</span><br></pre></td></tr></table></figure>
-<p>6.404可能原因<br>(1).域名解析错误。</p>
-<p>检查： windows下cmd命令符输入ping cheatlys.info（你的域名） 看一下ip地址，在ping一下你github上的，ping liuyongshun.github.io看一下是否一样，并且没有请求超时。</p>
-<p>(2).你的域名是通过国内注册商注册的，因没有实名制而无法访问。</p>
-<p>(3).浏览器缓存，路由器缓存。可尝试清除浏览器缓存再访问或者换个浏览器访问，或者换个局域网访问。</p>
-<p>(4). 你的hexo配置有问题，而导致index页面在主域名的下一级目录。找到index页面，在域名后面添加下一级目录。看是否能访问index页面（此时样式可能是乱的）。直接在.github.io的库（相当于根目录，在_config.yml配置root时直接是/如果这些内容在blog下，root应该是/blog/）下边展开这些内容。<br><img src="https://img-blog.csdn.net/2018070416543571?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MjEwNTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<p>7.绑定域名<br>你需要在本地的source下建立CNAME文件(是文件不是文件夹也没有拓展名)，内容就是你买的的域名（例：不要<a href="http://www.cheatlys.info，而是写cheatlys.info前者直接输入cheatlys.info不会连接到你的网站。）" target="_blank" rel="noopener">www.cheatlys.info，而是写cheatlys.info前者直接输入cheatlys.info不会连接到你的网站。）</a></p>
-<p>暂时先写到这里啦,后面想起来再写,</p>
-<p><strong>补充日常博客管理</strong><br><strong>日常修改</strong><br>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理：</p>
-<p>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；<br>然后才执行hexo generate -d发布网站到master分支上。<br>虽然两个过程顺序调转一般不会有问题，不过逻辑上这样的顺序是绝对没问题的（例如突然死机要重装了，悲催….的情况，调转顺序就有问题了）。</p>
-<p><strong>本地资料丢失</strong><br>当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：</p>
-<p>使用git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:CrazyMilk/CrazyMilk.github.io.git拷贝仓库（默认分支为hexo）；<br>在本地新拷贝的CrazyMilk.github.io文件夹下通过Git bash依次执行下列指令：npm install hexo、npm install、npm install hexo-deployer-git（记得，不需要hexo init这条指令）。</p>
+<p><br><br>但这篇文章的重点不是介绍base64, 下面主要还是说说图片资源在什么情况下要使用到base64转码吧<br><br><br><strong>场景一：将用户本地上传的资源转化，即用户通过浏览器点击文件上传时，将图片资源转化成base64：</strong></p>
+<p><input type="file" id="image"><br></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var reader = new FileReader();</span><br><span class="line">        var AllowImgFileSize = 2100000; //上传图片最大值(单位字节)（ 2 M = 2097152 B ）超过2M上传失败</span><br><span class="line">        var file = $(&quot;#image&quot;)[0].files[0];</span><br><span class="line">        var imgUrlBase64;</span><br><span class="line">        if (file) &#123;</span><br><span class="line">            //将文件以Data URL形式读入页面  </span><br><span class="line">            imgUrlBase64 = reader.readAsDataURL(file);</span><br><span class="line">            reader.onload = function (e) &#123;</span><br><span class="line">              //var ImgFileSize = reader.result.substring(reader.result.indexOf(&quot;,&quot;) + 1).length;//截取base64码部分（可选可不选，需要与后台沟通）</span><br><span class="line">              if (AllowImgFileSize != 0 &amp;&amp; AllowImgFileSize &lt; reader.result.length) &#123;</span><br><span class="line">                    alert( &apos;上传失败，请上传不大于2M的图片！&apos;);</span><br><span class="line">                    return;</span><br><span class="line">                &#125;else&#123;</span><br><span class="line">                    //执行上传操作</span><br><span class="line">                    alert(reader.result);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">         &#125;</span><br></pre></td></tr></table></figure>
+<p> <strong>场景二：将本项目中的图片资源转化成base64,（我还没有用到过此场景，感觉场景二也可以通过场景三来实现）</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">function()&#123;</span><br><span class="line">   var url = &quot;static/img/js1.jpg&quot;;//这是站内的一张图片资源，采用的相对路径</span><br><span class="line">   convertImgToBase64(url, function(base64Img)&#123;</span><br><span class="line">    //转化后的base64</span><br><span class="line">    alert(base64Img);</span><br><span class="line">   &#125;);             </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//实现将项目的图片转化成base64</span><br><span class="line">function convertImgToBase64(url, callback, outputFormat)&#123;</span><br><span class="line">   var canvas = document.createElement(&apos;CANVAS&apos;),</span><br><span class="line">　　ctx = canvas.getContext(&apos;2d&apos;),</span><br><span class="line">　　img = new Image;</span><br><span class="line">　　img.crossOrigin = &apos;Anonymous&apos;;</span><br><span class="line">　　img.onload = function()&#123;</span><br><span class="line">    　　canvas.height = img.height;</span><br><span class="line">    　　canvas.width = img.width;</span><br><span class="line">    　　ctx.drawImage(img,0,0);</span><br><span class="line">    　　var dataURL = canvas.toDataURL(outputFormat || &apos;image/png&apos;);</span><br><span class="line">    　　callback.call(this, dataURL);</span><br><span class="line">    　　canvas = null; </span><br><span class="line">    &#125;;</span><br><span class="line">　　img.src = url;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>场景三：将网络图片资源转化为base64，（感觉场景二中的资源换成绝对路径即可使用在场景三中）</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">function()&#123;</span><br><span class="line">　　 //这是网上的一张图片链接</span><br><span class="line">　　 var url=&quot;http://p1.pstatp.com/large/435d000085555bd8de10&quot;;</span><br><span class="line">    getBase64(url)</span><br><span class="line">        .then(function(base64)&#123;</span><br><span class="line">              console.log(base64);//处理成功打印在控制台</span><br><span class="line">        &#125;,function(err)&#123;</span><br><span class="line">              console.log(err);//打印异常信息</span><br><span class="line">        &#125;);                        </span><br><span class="line">&#125;    </span><br><span class="line"></span><br><span class="line">//传入图片路径，返回base64</span><br><span class="line">function getBase64(img)&#123;</span><br><span class="line">    function getBase64Image(img,width,height) &#123;//width、height调用时传入具体像素值，控制大小 ,不传则默认图像大小</span><br><span class="line">      var canvas = document.createElement(&quot;canvas&quot;);</span><br><span class="line">      canvas.width = width ? width : img.width;</span><br><span class="line">      canvas.height = height ? height : img.height;</span><br><span class="line"> </span><br><span class="line">      var ctx = canvas.getContext(&quot;2d&quot;);</span><br><span class="line">      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);</span><br><span class="line">      var dataURL = canvas.toDataURL();</span><br><span class="line">      return dataURL;</span><br><span class="line">    &#125;</span><br><span class="line">    var image = new Image();</span><br><span class="line">    image.crossOrigin = &apos;&apos;;</span><br><span class="line">    image.src = img;</span><br><span class="line">    var deferred=$.Deferred();</span><br><span class="line">    if(img)&#123;</span><br><span class="line">      image.onload =function ()&#123;</span><br><span class="line">        deferred.resolve(getBase64Image(image));//将base64传给done上传处理</span><br><span class="line">      &#125;</span><br><span class="line">      return deferred.promise();//问题要让onload完成后再return sessionStorage[&apos;imgTest&apos;]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>至此，便将图片base64转码的三种场景介绍完毕了，下面是基于以上的一下拓展：</p>
+<p><strong>扩展:</strong><br><strong>拓展一：后台需要以纯字符串的形式上传（即去掉data:image/png;base64，截取字符串即可）</strong></p>
+<p>reader.result.substring(reader.result.indexOf(“,”) + 1)<br><strong>拓展二：判断base64资源大小，超过2M不让上传</strong></p>
+<pre><code>var AllowImgFileSize = 2100000;    //上传图片最大值(单位字节)（ 2 M = 2097152 B ）
+if (AllowImgFileSize != 0 &amp;&amp; AllowImgFileSize &lt; reader.result.length) {
+  alert( &apos;上传失败，请上传不大于2M的图片！&apos;);
+  return;
+}
+</code></pre><p>其中reader.result即是base64转码后的结果。</p>
+<p>附上一篇 参考文档: <a href="https://blog.csdn.net/tww316/article/details/44343075" target="_blank" rel="noopener">https://blog.csdn.net/tww316/article/details/44343075</a><br><br><br>JavaScript 图片上传后base64转码直接显示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 获取文件流</span><br><span class="line">var fileObj = document.getElementById(&apos;inputId&apos;).files;</span><br><span class="line">// 实例化一个FileReader对象</span><br><span class="line">var reader = new FileReader();</span><br><span class="line">	// 创建一个img</span><br><span class="line">var img = $(&apos;&lt;img /&gt;&apos;);</span><br><span class="line">reader.onload = function (e) &#123;</span><br><span class="line">	img.attr(&apos;src&apos;, e.target.result);</span><br><span class="line">	$(&apos;div-selector&apos;).append(img); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// base64转码</span><br><span class="line">reader.readAsDataURL(fileObj);</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -427,6 +387,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/object-Object/" rel="tag"># [object Object]</a>
+          
+        </div>
+      
 
       
       
@@ -436,8 +402,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/23/archives-git知识点/" rel="next" title="使用hexo+github搭建个人博客(进阶篇)">
-                <i class="fa fa-chevron-left"></i> 使用hexo+github搭建个人博客(进阶篇)
+              <a href="/2017/07/08/为什么要将script脚本放在body底部/" rel="next" title="为什么要将script脚本放在body底部">
+                <i class="fa fa-chevron-left"></i> 为什么要将script脚本放在body底部
               </a>
             
           </div>
@@ -446,8 +412,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/08/为什么要将script脚本放在body底部/" rel="prev" title="为什么要将script脚本放在body底部">
-                为什么要将script脚本放在body底部 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/23/react的状态提升/" rel="prev" title="react的状态提升.md">
+                react的状态提升.md <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
