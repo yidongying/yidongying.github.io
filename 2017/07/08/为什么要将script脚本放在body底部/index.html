@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="易冬英的博客">
 <meta property="og:description" content="说明： 本文提到的浏览器均是指Chrome。“script标签“指的都是普通的不带其他属性的外联javascript。web性能优化的手段并不是非黑即白的，有些手段过头了反而降低性能，所以在讨论条件和结论的时候，虽然很多条件本身会带来其他细微的负面或正面影响，为了不使论述失去重点，不会扩展太开。一、从一个面试题说起面试前端的时候我喜欢问一些看上去是常识的问题。比如：为什么大家普遍把这样的代码放在b">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-19T07:04:07.425Z">
+<meta property="og:updated_time" content="2018-07-24T03:35:12.080Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="为什么要将script脚本放在body底部">
 <meta name="twitter:description" content="说明： 本文提到的浏览器均是指Chrome。“script标签“指的都是普通的不带其他属性的外联javascript。web性能优化的手段并不是非黑即白的，有些手段过头了反而降低性能，所以在讨论条件和结论的时候，虽然很多条件本身会带来其他细微的负面或正面影响，为了不使论述失去重点，不会扩展太开。一、从一个面试题说起面试前端的时候我喜欢问一些看上去是常识的问题。比如：为什么大家普遍把这样的代码放在b">
@@ -367,7 +367,7 @@
 </blockquote>
 <p>Create/Update Render CSSOM：CSS文件下载完成，开始构建CSSOM<br>Create/Update Render Tree：所有CSS文件下载完成，CSSOM构建结束后，和 DOM 一起生成 Render Tree。<br>Layout：有了Render Tree，浏览器已经能知道网页中有哪些节点、各个节点的CSS定义以及他们的从属关系。<br>下一步操作称之为Layout，顾名思义就是计算出每个节点在屏幕中的位置。<br>Painting：Layout后，浏览器已经知道了哪些节点要显示（which nodes are visible）、每个节点的CSS属性是什么（their computed styles）、每个节点在屏幕中的位置是哪里（geometry）。就进入了最后一步：Painting，按照算出来的规则，通过显卡，把内容画到屏幕上。<br>以上五个步骤前3个步骤之所有使用 “Create/Update” 是因为DOM、CSSOM、Render Tree都可能在第一次Painting后又被更新多次，比如JS修改了DOM或者CSS属性。</p>
 <p>Layout 和 Painting 也会被重复执行，除了DOM、CSSOM更新的原因外，图片下载完成后也需要调用Layout 和 Painting来更新网页。</p>
-<p>看 Timeline，一目了然<br>我扒了一段有赞PC首页的代码到本地，通过Node跑起来。Node作为Server端，对/js/jquery.js 做了延时2s返回的处理，并且把<script src="http://127.0.0.1:8080/js/jquery.js"></script> 放到导航栏的下面，结果是这样的：</p>
+<p>看 Timeline，一目了然<br>我扒了一段有赞PC首页的代码到本地，通过Node跑起来。Node作为Server端，对/js/jquery.js 做了延时2s返回的处理，并且把<script src="https://127.0.0.1:8080/js/jquery.js"></script> 放到导航栏的下面，结果是这样的：</p>
 <p>bVsaO</p>
 <p>bVsaO</p>
 <p>bVsaO</p>
@@ -384,8 +384,8 @@
 <p>可是，在复杂的实际应用场景中，要贯彻这几条结论可能会遇到问题，比如：</p>
 <p>你的页面是分模块来写的，每一个模块都有自己的html、js甚至css，当把这些模块凑到一个页面中的时候就会出现js自然而然地出现在HTML中间部分。你很难把script标签都放到底部<br>即使你把script标签都放到底部，但script标签的存在终究是拖慢了首屏时间、DomContendLoad和loaded的时间。如果只有一个script标签，我们可以加一个async，但多个async的script标签的结果会是js文件被乱序执行的，这显然不是我们想要的。<br>我们也遇到了这样的问题，所以就做了一个开源项目：Tiny-Loader —— A small loader that load CSS/JS in best way for page performance 简单好用。</p>
 <p>来自：<a href="https://blog.csdn.net/garvisjack/article/details/71077986#t1" target="_blank" rel="noopener">https://blog.csdn.net/garvisjack/article/details/71077986#t1</a></p>
-<p>相关文章<br><a href="http://caibaojian.com/toutiao/6171" target="_blank" rel="noopener">聊聊前端排序的那些事</a> 601Views</p>
-<p><a href="http://caibaojian.com/toutiao/6547" target="_blank" rel="noopener">浏览器的布局绘制与DOM操作</a>  214Views<br><a href="http://caibaojian.com/toutiao/5111" target="_blank" rel="noopener">小技巧：一行代码让浏览器瞬间变成临时编辑器</a> 761Views<br><a href="http://caibaojian.com/toutiao/6648" target="_blank" rel="noopener">浅析渲染引擎与前端优化</a> 245Views<br><a href="https://blog.csdn.net/lumeier/article/details/46398009" target="_blank" rel="noopener">JS放在head和放在body中的区别</a>   286Views</p>
+<p>相关文章<br><a href="https://caibaojian.com/toutiao/6171" target="_blank" rel="noopener">聊聊前端排序的那些事</a> 601Views</p>
+<p><a href="https://caibaojian.com/toutiao/6547" target="_blank" rel="noopener">浏览器的布局绘制与DOM操作</a>  214Views<br><a href="https://caibaojian.com/toutiao/5111" target="_blank" rel="noopener">小技巧：一行代码让浏览器瞬间变成临时编辑器</a> 761Views<br><a href="https://caibaojian.com/toutiao/6648" target="_blank" rel="noopener">浅析渲染引擎与前端优化</a> 245Views<br><a href="https://blog.csdn.net/lumeier/article/details/46398009" target="_blank" rel="noopener">JS放在head和放在body中的区别</a>   286Views</p>
 
       
     </div>
